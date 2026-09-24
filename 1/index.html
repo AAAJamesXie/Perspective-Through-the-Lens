@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <meta name="description" content="A portrait experiment in camera distance, zoom, and perspective for SYDE 671 Assignment 1.">
+  <title>The Distance Between Us — Perspective, Through the Lens</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-page">
+  <header class="site-header shell">
+    <a class="brand" href="../index.html" aria-label="Perspective, Through the Lens home">
+      <span class="brand-mark" aria-hidden="true">◎</span>
+      <span>Perspective<br><small>through the lens</small></span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="../index.html">← Home</a>
+      <a href="#comparison">The experiment <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero shell" aria-labelledby="project-title">
+      <div class="project-hero-topline"><span>Assignment 01 / Part One / Part 1</span><span>Portrait study · 2026</span></div>
+      <p class="eyebrow"><span class="eyebrow-line"></span> Becoming friends with your camera</p>
+      <h1 id="project-title">The distance<br><em>between us.</em></h1>
+      <div class="project-intro">
+        <p class="project-deck">The same face. Roughly the same size in the frame. Five frames while moving back reveal how profoundly camera position changes a portrait.</p>
+        <p class="project-intro-note">Move away. Zoom in. Look again.</p>
+      </div>
+      <div class="project-hero-rule"><span>01 / Observation</span><a href="#comparison">Scroll to compare <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="comparison-section" id="comparison" aria-labelledby="comparison-heading">
+      <div class="shell">
+        <div class="section-heading comparison-heading">
+          <div><p class="eyebrow">A / The comparison</p><h2 id="comparison-heading">Close up / Step back</h2></div>
+          <p>The framing stays similar. The proportions do not.</p>
+        </div>
+        <div class="comparison-grid">
+          <figure class="comparison-card">
+            <div class="portrait-frame"><img src="./media/01-near.jpg" alt="Close camera position: the nose appears larger relative to the rest of the face" width="1200" height="1600"></div>
+            <figcaption><span class="photo-index">01 / CLOSE</span><strong>The close portrait</strong><span>14 mm equivalent · Ultra-wide camera</span></figcaption>
+          </figure>
+          <figure class="comparison-card">
+            <div class="portrait-frame"><img src="./media/05-far.jpg" alt="Farther camera position: facial features appear more balanced while the face remains similarly framed" width="1200" height="1600"></div>
+            <figcaption><span class="photo-index">05 / FARTHER</span><strong>The stepped-back portrait</strong><span>99 mm equivalent · Zoomed framing</span></figcaption>
+          </figure>
+        </div>
+        <p class="comparison-note"><span class="note-mark" aria-hidden="true">↗</span> Compare the nose, ears, and outline of the face. In the close image, features nearest the camera are exaggerated. With the camera farther away, the relative distances to those features become more similar.</p>
+      </div>
+    </section>
+
+    <section class="sequence-section shell" aria-labelledby="sequence-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">B / The sequence</p><h2 id="sequence-heading">A gradual change</h2></div>
+        <p>Five frames, from near to far.</p>
+      </div>
+      <div class="sequence-grid">
+        <figure><img src="./media/01-near.jpg" alt="First portrait, closest camera position" width="1200" height="1600" loading="lazy"><figcaption><span>01</span><strong>14 mm</strong></figcaption></figure>
+        <figure><img src="./media/02-step-back.jpg" alt="Second portrait, a little farther from the subject" width="1200" height="1600" loading="lazy"><figcaption><span>02</span><strong>20 mm</strong></figcaption></figure>
+        <figure><img src="./media/03-middle.jpg" alt="Third portrait, intermediate camera position" width="1200" height="1600" loading="lazy"><figcaption><span>03</span><strong>28 mm</strong></figcaption></figure>
+        <figure><img src="./media/04-farther.jpg" alt="Fourth portrait, farther camera position" width="1200" height="1600" loading="lazy"><figcaption><span>04</span><strong>48 mm</strong></figcaption></figure>
+        <figure><img src="./media/05-far.jpg" alt="Fifth portrait, farthest camera position" width="1200" height="1600" loading="lazy"><figcaption><span>05</span><strong>99 mm</strong></figcaption></figure>
+      </div>
+      <p class="sequence-caption">Numbers are 35 mm equivalent focal lengths recorded in the original HEIC image metadata. The phone uses different lenses and digital zoom across this sequence; these values describe framing, not measured camera-to-subject distance.</p>
+    </section>
+
+    <section class="explanation-section" aria-labelledby="explanation-heading">
+      <div class="shell explanation-grid">
+        <div><p class="eyebrow">C / What changed?</p><h2 id="explanation-heading">It was where<br>the camera stood.</h2></div>
+        <div class="explanation-copy">
+          <p>In a close portrait, the nose is much nearer to the camera than the ears. That distance difference makes the nearer features appear disproportionately large. When the camera moves back, the distance difference becomes a smaller fraction of the total distance, so the face looks more natural.</p>
+          <p>Zooming in after stepping back restores a similar face size in the frame. Zoom changes the framing; the camera position changes the perspective.</p>
+          <div class="takeaway"><span>THE TAKEAWAY</span><strong>Perspective follows position.<br>Zoom follows framing.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section shell">
+      <span class="eyebrow">End of study / 01</span>
+      <p>Sometimes the most useful camera setting is a step backward.</p>
+      <a class="text-link" href="../index.html">Return to the homepage <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><span>James Xie · University of Waterloo</span><span>SYDE 671 · Advanced Image Processing</span></footer>
+</body>
+</html>
