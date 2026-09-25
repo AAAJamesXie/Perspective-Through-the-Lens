@@ -85,15 +85,16 @@ h1 em { font-weight: 400; color: var(--accent); }
 .comparison-card figcaption { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 7px 12px; padding-top: 15px; }
 .photo-index { grid-column: 1/-1; color: #d3a78f; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
 .comparison-card strong { font-family: Georgia, serif; font-size: 24px; font-weight: 400; }
-.comparison-card figcaption > span:last-child { color: #d0d5ce; font-size: 12px; white-space: nowrap; }
+.comparison-card figcaption > span:last-child { color: #d0d5ce; font-size: 12px; }
 .comparison-note { display: flex; gap: 18px; max-width: 900px; margin: 63px 0 0; font-size: 16px; line-height: 1.75; color: #e1e6dc; }
 .note-mark { flex: none; color: #d3a78f; font-size: 31px; line-height: 1; }
 .sequence-section { padding-block: 108px 112px; }
 .sequence-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
 .sequence-grid figure { margin: 0; }
 .sequence-grid img { width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; object-position: center 38%; background: var(--paper-deep); }
-.sequence-grid figcaption { display: flex; justify-content: space-between; gap: 8px; padding-top: 11px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.sequence-grid figcaption { display: grid; grid-template-columns: 1fr auto; gap: 6px 8px; padding-top: 11px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
 .sequence-grid figcaption strong { color: var(--ink); font-weight: 700; }
+.sequence-grid figcaption small { grid-column: 1 / -1; font-size: 11px; font-weight: 400; letter-spacing: 0; }
 .sequence-caption { max-width: 720px; margin: 25px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .explanation-section { padding-block: 108px; background: var(--paper-deep); }
 .explanation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
