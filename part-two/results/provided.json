@@ -1,0 +1,3080 @@
+{
+  "parameters": {
+    "metric": "ncc",
+    "radius": 15,
+    "refine_radius": 2,
+    "min_size": 160,
+    "border": 0.12
+  },
+  "single_width": 320,
+  "coordinate_convention": "Applied shift (x,y): positive right/down; B is fixed.",
+  "timing_scope": "Alignment of G and R only; excludes input/output, resize for single-scale, and compositing.",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.3",
+    "pillow": "11.1.0"
+  },
+  "count": 18,
+  "records": [
+    {
+      "id": "00056v",
+      "file": "00056v.jpg",
+      "group": "provided",
+      "sha256": "bd9ee4a469bb71ea0fcbe4a06982781008ae82fbe2247276531158920df1b417",
+      "input_size_wh": [
+        398,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        398
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            4
+          ],
+          "r_shift_xy": [
+            0,
+            10
+          ],
+          "scores": [
+            0.9603847696399298,
+            0.9456263556670423
+          ],
+          "seconds": 0.38309840000147233,
+          "channel_size_hw": [
+            274,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            4
+          ],
+          "r_shift_xy": [
+            0,
+            10
+          ],
+          "scores": [
+            37.433009066148884,
+            43.77764408923651
+          ],
+          "seconds": 0.23691949999920325,
+          "channel_size_hw": [
+            274,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          1,
+          6
+        ],
+        "r_shift_xy": [
+          1,
+          13
+        ],
+        "seconds": 0.07778110000072047,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              1
+            ],
+            "score": 0.9715999009694131,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9639650783930942,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              398
+            ],
+            "shift_xy": [
+              1,
+              6
+            ],
+            "score": 0.954375030741987,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              3
+            ],
+            "score": 0.9651481669795581,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              0,
+              6
+            ],
+            "score": 0.9488359185547586,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              398
+            ],
+            "shift_xy": [
+              1,
+              13
+            ],
+            "score": 0.940430502028984,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          328,
+          397
+        ]
+      }
+    },
+    {
+      "id": "00125v",
+      "file": "00125v.jpg",
+      "group": "provided",
+      "sha256": "077a1f8591711522c5f5e69f17a327158eee110dd6eb39d827bd6770400ce3d2",
+      "input_size_wh": [
+        400,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        400
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            4
+          ],
+          "r_shift_xy": [
+            1,
+            8
+          ],
+          "scores": [
+            0.9756242781991598,
+            0.9489618104091757
+          ],
+          "seconds": 0.3873544999951264,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            2,
+            4
+          ],
+          "r_shift_xy": [
+            1,
+            8
+          ],
+          "scores": [
+            29.523803899650584,
+            49.6174885249137
+          ],
+          "seconds": 0.23560859999997774,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          5
+        ],
+        "r_shift_xy": [
+          1,
+          10
+        ],
+        "seconds": 0.08095669999602251,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              1
+            ],
+            "score": 0.9779342518092972,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9756709744565096,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              400
+            ],
+            "shift_xy": [
+              2,
+              5
+            ],
+            "score": 0.9750366786558972,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9589059083656645,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              1,
+              5
+            ],
+            "score": 0.9497121910494899,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              400
+            ],
+            "shift_xy": [
+              1,
+              10
+            ],
+            "score": 0.9472065730364841,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          331,
+          398
+        ]
+      }
+    },
+    {
+      "id": "00163v",
+      "file": "00163v.jpg",
+      "group": "provided",
+      "sha256": "c91cc1b38f867b7694ecf1c1915047b2c3588e837c87e13aec35a781b553f774",
+      "input_size_wh": [
+        387,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        387
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            -2
+          ],
+          "r_shift_xy": [
+            1,
+            -3
+          ],
+          "scores": [
+            0.9793521708773738,
+            0.977674102284658
+          ],
+          "seconds": 0.3782135999936145,
+          "channel_size_hw": [
+            282,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            -2
+          ],
+          "r_shift_xy": [
+            1,
+            -3
+          ],
+          "scores": [
+            24.21111811456628,
+            25.177054379677497
+          ],
+          "seconds": 0.25634569999965606,
+          "channel_size_hw": [
+            282,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          1,
+          -3
+        ],
+        "r_shift_xy": [
+          1,
+          -4
+        ],
+        "seconds": 0.07887249999475898,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              97
+            ],
+            "shift_xy": [
+              0,
+              0
+            ],
+            "score": 0.9752886931518185,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              194
+            ],
+            "shift_xy": [
+              0,
+              -1
+            ],
+            "score": 0.978933915650351,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              387
+            ],
+            "shift_xy": [
+              1,
+              -3
+            ],
+            "score": 0.9768553998701193,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              97
+            ],
+            "shift_xy": [
+              0,
+              -1
+            ],
+            "score": 0.9776811305974755,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              194
+            ],
+            "shift_xy": [
+              1,
+              -2
+            ],
+            "score": 0.9784146955951759,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              387
+            ],
+            "shift_xy": [
+              1,
+              -4
+            ],
+            "score": 0.9750005119177674,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          337,
+          386
+        ]
+      }
+    },
+    {
+      "id": "00458u",
+      "file": "00458u.jpg",
+      "group": "provided",
+      "sha256": "d40e9050afd1e68a3c84c598b423d5fc73a806b9827a6849350cbece8ba98b33",
+      "input_size_wh": [
+        3741,
+        9715
+      ],
+      "channel_size_hw": [
+        3238,
+        3741
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            0,
+            4
+          ],
+          "r_shift_xy": [
+            3,
+            8
+          ],
+          "scores": [
+            0.9899198713139613,
+            0.9852635412997639
+          ],
+          "seconds": 0.44201990000146907,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            0,
+            4
+          ],
+          "r_shift_xy": [
+            3,
+            8
+          ],
+          "scores": [
+            22.15786437014268,
+            26.774718283788065
+          ],
+          "seconds": 0.2866183000005549,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          6,
+          43
+        ],
+        "r_shift_xy": [
+          32,
+          87
+        ],
+        "seconds": 2.3896364999964135,
+        "g_trace": [
+          {
+            "shape_hw": [
+              102,
+              117
+            ],
+            "shift_xy": [
+              0,
+              1
+            ],
+            "score": 0.990912322291964,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              203,
+              234
+            ],
+            "shift_xy": [
+              0,
+              3
+            ],
+            "score": 0.9911278965262329,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              405,
+              468
+            ],
+            "shift_xy": [
+              1,
+              5
+            ],
+            "score": 0.9896004776893682,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              810,
+              936
+            ],
+            "shift_xy": [
+              1,
+              11
+            ],
+            "score": 0.9872924073485806,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1619,
+              1871
+            ],
+            "shift_xy": [
+              3,
+              21
+            ],
+            "score": 0.9853068889077055,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3238,
+              3741
+            ],
+            "shift_xy": [
+              6,
+              43
+            ],
+            "score": 0.984063142425368,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              102,
+              117
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9878658386196217,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              203,
+              234
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9862385191900582,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              405,
+              468
+            ],
+            "shift_xy": [
+              4,
+              11
+            ],
+            "score": 0.985446637557868,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              810,
+              936
+            ],
+            "shift_xy": [
+              8,
+              22
+            ],
+            "score": 0.9835959708024159,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1619,
+              1871
+            ],
+            "shift_xy": [
+              16,
+              44
+            ],
+            "score": 0.9820195437747766,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3238,
+              3741
+            ],
+            "shift_xy": [
+              32,
+              87
+            ],
+            "score": 0.9811285856495486,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3151,
+          3709
+        ]
+      }
+    },
+    {
+      "id": "00804v",
+      "file": "00804v.jpg",
+      "group": "provided",
+      "sha256": "8859f911b7ac802ae10ceb32109a3de9eff0ccae7ba53a3dd6eaf1b5822b3626",
+      "input_size_wh": [
+        396,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        396
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            -2,
+            5
+          ],
+          "r_shift_xy": [
+            -4,
+            10
+          ],
+          "scores": [
+            0.9817529442567977,
+            0.9695875178617874
+          ],
+          "seconds": 0.4407042000020738,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            -2,
+            5
+          ],
+          "r_shift_xy": [
+            -4,
+            10
+          ],
+          "scores": [
+            30.446202336461976,
+            37.34755304231015
+          ],
+          "seconds": 0.26925889999984065,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          -2,
+          6
+        ],
+        "r_shift_xy": [
+          -4,
+          13
+        ],
+        "seconds": 0.08683610000298359,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              -1,
+              1
+            ],
+            "score": 0.9809069115538326,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              -1,
+              3
+            ],
+            "score": 0.9825765946896626,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              396
+            ],
+            "shift_xy": [
+              -2,
+              6
+            ],
+            "score": 0.9813694506735526,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              -2,
+              3
+            ],
+            "score": 0.9753578356769909,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              -2,
+              6
+            ],
+            "score": 0.9691762189428031,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              396
+            ],
+            "shift_xy": [
+              -4,
+              13
+            ],
+            "score": 0.9687118424603104,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          328,
+          392
+        ]
+      }
+    },
+    {
+      "id": "01007a",
+      "file": "01007a.jpg",
+      "group": "provided",
+      "sha256": "3f55de06407f8e0d6af3e02909a8def7a19282ee4a503d603b40586e1b2babd5",
+      "input_size_wh": [
+        3800,
+        9715
+      ],
+      "channel_size_hw": [
+        3238,
+        3800
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            11
+          ],
+          "scores": [
+            0.9894457305278256,
+            0.9582989040279989
+          ],
+          "seconds": 0.38177189999987604,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            11
+          ],
+          "scores": [
+            21.380624789605633,
+            46.27131866669971
+          ],
+          "seconds": 0.2588571999949636,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          14,
+          60
+        ],
+        "r_shift_xy": [
+          13,
+          129
+        ],
+        "seconds": 2.38241630000266,
+        "g_trace": [
+          {
+            "shape_hw": [
+              102,
+              119
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9905389228477613,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              203,
+              238
+            ],
+            "shift_xy": [
+              1,
+              4
+            ],
+            "score": 0.9895605003235294,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              405,
+              475
+            ],
+            "shift_xy": [
+              2,
+              7
+            ],
+            "score": 0.9885114696224679,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              810,
+              950
+            ],
+            "shift_xy": [
+              3,
+              15
+            ],
+            "score": 0.9882992946561099,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1619,
+              1900
+            ],
+            "shift_xy": [
+              7,
+              30
+            ],
+            "score": 0.9874363253583621,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3238,
+              3800
+            ],
+            "shift_xy": [
+              14,
+              60
+            ],
+            "score": 0.9866219229203498,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              102,
+              119
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9614846380676705,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              203,
+              238
+            ],
+            "shift_xy": [
+              1,
+              8
+            ],
+            "score": 0.9586816310990223,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              405,
+              475
+            ],
+            "shift_xy": [
+              2,
+              16
+            ],
+            "score": 0.9578693087406923,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              810,
+              950
+            ],
+            "shift_xy": [
+              3,
+              32
+            ],
+            "score": 0.9573075345162606,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1619,
+              1900
+            ],
+            "shift_xy": [
+              6,
+              64
+            ],
+            "score": 0.9564007727944256,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3238,
+              3800
+            ],
+            "shift_xy": [
+              13,
+              129
+            ],
+            "score": 0.9558998929995796,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3109,
+          3786
+        ]
+      }
+    },
+    {
+      "id": "01047u",
+      "file": "01047u.jpg",
+      "group": "provided",
+      "sha256": "e6af2e5678c8f58247e19ed18a23071d6da35ac90d5baa51398a92115e95bafd",
+      "input_size_wh": [
+        3741,
+        9656
+      ],
+      "channel_size_hw": [
+        3218,
+        3741
+      ],
+      "discarded_bottom_rows": 2,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            2
+          ],
+          "r_shift_xy": [
+            3,
+            6
+          ],
+          "scores": [
+            0.9850843183763995,
+            0.9827089455946766
+          ],
+          "seconds": 0.4737470999971265,
+          "channel_size_hw": [
+            275,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            2,
+            2
+          ],
+          "r_shift_xy": [
+            3,
+            6
+          ],
+          "scores": [
+            18.519477714607074,
+            27.578881427513917
+          ],
+          "seconds": 0.3153390000006766,
+          "channel_size_hw": [
+            275,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          20,
+          24
+        ],
+        "r_shift_xy": [
+          33,
+          71
+        ],
+        "seconds": 2.74133509999956,
+        "g_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              1,
+              1
+            ],
+            "score": 0.986989019883705,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              1,
+              2
+            ],
+            "score": 0.984209013682845,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              403,
+              468
+            ],
+            "shift_xy": [
+              3,
+              3
+            ],
+            "score": 0.983659660761283,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              805,
+              936
+            ],
+            "shift_xy": [
+              5,
+              6
+            ],
+            "score": 0.980455732519468,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1609,
+              1871
+            ],
+            "shift_xy": [
+              10,
+              12
+            ],
+            "score": 0.9760327512746245,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3218,
+              3741
+            ],
+            "shift_xy": [
+              20,
+              24
+            ],
+            "score": 0.9730074354039002,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              1,
+              2
+            ],
+            "score": 0.9866657099309648,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              2,
+              5
+            ],
+            "score": 0.9827856896185571,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              403,
+              468
+            ],
+            "shift_xy": [
+              4,
+              9
+            ],
+            "score": 0.9816660319926649,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              805,
+              936
+            ],
+            "shift_xy": [
+              8,
+              18
+            ],
+            "score": 0.978662741241486,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1609,
+              1871
+            ],
+            "shift_xy": [
+              17,
+              36
+            ],
+            "score": 0.9766222434889958,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3218,
+              3741
+            ],
+            "shift_xy": [
+              33,
+              71
+            ],
+            "score": 0.9749915080155181,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3147,
+          3708
+        ]
+      }
+    },
+    {
+      "id": "01164v",
+      "file": "01164v.jpg",
+      "group": "provided",
+      "sha256": "008722aabe0fb3f322e13cae7703ca0f6f7e5a9ffb66d55195a97917f6f0fa1f",
+      "input_size_wh": [
+        396,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        396
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            3,
+            9
+          ],
+          "scores": [
+            0.9897509030108431,
+            0.9778207579766773
+          ],
+          "seconds": 0.4162021000011009,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            2,
+            9
+          ],
+          "scores": [
+            20.892930275318005,
+            37.709845620064
+          ],
+          "seconds": 0.2807265000010375,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          6
+        ],
+        "r_shift_xy": [
+          3,
+          11
+        ],
+        "seconds": 0.09017869999661343,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              0,
+              1
+            ],
+            "score": 0.9914407886931256,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9904356499562453,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              396
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9890873772683743,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9826390657416658,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9773404071808391,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              396
+            ],
+            "shift_xy": [
+              3,
+              11
+            ],
+            "score": 0.9772437728183435,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          330,
+          393
+        ]
+      }
+    },
+    {
+      "id": "01269v",
+      "file": "01269v.jpg",
+      "group": "provided",
+      "sha256": "687baebb3265c468b9e61822b908a6d2060fc6a1b352ddff4026b478fac5b687",
+      "input_size_wh": [
+        395,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        395
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            5
+          ],
+          "r_shift_xy": [
+            2,
+            11
+          ],
+          "scores": [
+            0.9736351806691562,
+            0.9485991744451766
+          ],
+          "seconds": 0.4003048000013223,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            2,
+            5
+          ],
+          "r_shift_xy": [
+            2,
+            11
+          ],
+          "scores": [
+            51.93105465458007,
+            83.43030597318294
+          ],
+          "seconds": 0.241396800003713,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          6
+        ],
+        "r_shift_xy": [
+          3,
+          13
+        ],
+        "seconds": 0.08010610000201268,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              1,
+              2
+            ],
+            "score": 0.9816937955161642,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9761618754687712,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              395
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9690849026024405,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              1,
+              4
+            ],
+            "score": 0.9667776120759305,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              1,
+              7
+            ],
+            "score": 0.9515507687091562,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              395
+            ],
+            "shift_xy": [
+              3,
+              13
+            ],
+            "score": 0.9422133502394147,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          328,
+          392
+        ]
+      }
+    },
+    {
+      "id": "01522v",
+      "file": "01522v.jpg",
+      "group": "provided",
+      "sha256": "6bcde710e101d91002d8b2d9c59beb527144435cf85dac44f69e1983069d9b3d",
+      "input_size_wh": [
+        391,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        391
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            10
+          ],
+          "scores": [
+            0.9556844340947405,
+            0.9549531017704564
+          ],
+          "seconds": 0.40852849999646423,
+          "channel_size_hw": [
+            279,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            10
+          ],
+          "scores": [
+            48.25970023601187,
+            52.63477023848106
+          ],
+          "seconds": 0.24443060000339756,
+          "channel_size_hw": [
+            279,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          6
+        ],
+        "r_shift_xy": [
+          2,
+          13
+        ],
+        "seconds": 0.07870639999600826,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              98
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9543713061196422,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              196
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9590782888580635,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              391
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9532725473951481,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              98
+            ],
+            "shift_xy": [
+              0,
+              3
+            ],
+            "score": 0.9606118838795089,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              196
+            ],
+            "shift_xy": [
+              1,
+              6
+            ],
+            "score": 0.9563065570572801,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              391
+            ],
+            "shift_xy": [
+              2,
+              13
+            ],
+            "score": 0.9510238945463112,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          328,
+          389
+        ]
+      }
+    },
+    {
+      "id": "01597v",
+      "file": "01597v.jpg",
+      "group": "provided",
+      "sha256": "df03289c357d807b23b0aa203e34f4f5fd65e92d73b9a07ae9c2784528e31704",
+      "input_size_wh": [
+        395,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        395
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            6
+          ],
+          "r_shift_xy": [
+            1,
+            13
+          ],
+          "scores": [
+            0.9799682694199576,
+            0.9755064095481616
+          ],
+          "seconds": 0.38452089999918826,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            6
+          ],
+          "r_shift_xy": [
+            1,
+            13
+          ],
+          "scores": [
+            30.25841259187136,
+            35.571642471526
+          ],
+          "seconds": 0.2582196000003023,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          1,
+          7
+        ],
+        "r_shift_xy": [
+          1,
+          16
+        ],
+        "seconds": 0.08106460000271909,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.985690790595357,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              1,
+              4
+            ],
+            "score": 0.9795702553093555,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              395
+            ],
+            "shift_xy": [
+              1,
+              7
+            ],
+            "score": 0.9785286391088608,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9880066876770617,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              198
+            ],
+            "shift_xy": [
+              0,
+              8
+            ],
+            "score": 0.9759182198884662,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              395
+            ],
+            "shift_xy": [
+              1,
+              16
+            ],
+            "score": 0.9736040862958992,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          325,
+          394
+        ]
+      }
+    },
+    {
+      "id": "01598v",
+      "file": "01598v.jpg",
+      "group": "provided",
+      "sha256": "8a3b7e06eeff6ef0af7b4ab0f2a8b857a18ce4eff3943929263351a1b426d7af",
+      "input_size_wh": [
+        392,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        392
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            0,
+            7
+          ],
+          "r_shift_xy": [
+            -1,
+            13
+          ],
+          "scores": [
+            0.9679846526270282,
+            0.9570479978731362
+          ],
+          "seconds": 0.3909665999963181,
+          "channel_size_hw": [
+            278,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            0,
+            7
+          ],
+          "r_shift_xy": [
+            -1,
+            14
+          ],
+          "scores": [
+            25.775523604265402,
+            42.787944037053606
+          ],
+          "seconds": 0.2493538000053377,
+          "channel_size_hw": [
+            278,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          0,
+          8
+        ],
+        "r_shift_xy": [
+          -1,
+          16
+        ],
+        "seconds": 0.09584750000067288,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              98
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9771377653903366,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              196
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9708632050996964,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              392
+            ],
+            "shift_xy": [
+              0,
+              8
+            ],
+            "score": 0.9652188774067019,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              98
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9710348919799241,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              196
+            ],
+            "shift_xy": [
+              -1,
+              8
+            ],
+            "score": 0.9598089820533672,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              392
+            ],
+            "shift_xy": [
+              -1,
+              16
+            ],
+            "score": 0.9516448548337575,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          325,
+          391
+        ]
+      }
+    },
+    {
+      "id": "01657u",
+      "file": "01657u.jpg",
+      "group": "provided",
+      "sha256": "3df854261d978c1e1fac9e46a69c0902f5b6e8551624220b8a942d655be8b4ed",
+      "input_size_wh": [
+        3761,
+        9637
+      ],
+      "channel_size_hw": [
+        3212,
+        3761
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            10
+          ],
+          "scores": [
+            0.9871938891760083,
+            0.9796625343267955
+          ],
+          "seconds": 0.5094441999972332,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            5
+          ],
+          "r_shift_xy": [
+            1,
+            10
+          ],
+          "scores": [
+            23.10863953366656,
+            29.48234984847198
+          ],
+          "seconds": 0.3458780000000843,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          9,
+          55
+        ],
+        "r_shift_xy": [
+          12,
+          117
+        ],
+        "seconds": 2.4732529999964754,
+        "g_trace": [
+          {
+            "shape_hw": [
+              101,
+              118
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9879985219816333,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              201,
+              236
+            ],
+            "shift_xy": [
+              0,
+              3
+            ],
+            "score": 0.9871446832354828,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              402,
+              471
+            ],
+            "shift_xy": [
+              1,
+              7
+            ],
+            "score": 0.9876370610316875,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              803,
+              941
+            ],
+            "shift_xy": [
+              2,
+              14
+            ],
+            "score": 0.98737393174599,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1606,
+              1881
+            ],
+            "shift_xy": [
+              4,
+              27
+            ],
+            "score": 0.9871526437711998,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3212,
+              3761
+            ],
+            "shift_xy": [
+              9,
+              55
+            ],
+            "score": 0.9869233189214616,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              101,
+              118
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9812725485143589,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              201,
+              236
+            ],
+            "shift_xy": [
+              1,
+              7
+            ],
+            "score": 0.9798870491876084,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              402,
+              471
+            ],
+            "shift_xy": [
+              1,
+              14
+            ],
+            "score": 0.9794355902412788,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              803,
+              941
+            ],
+            "shift_xy": [
+              3,
+              29
+            ],
+            "score": 0.9792990815943657,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1606,
+              1881
+            ],
+            "shift_xy": [
+              6,
+              58
+            ],
+            "score": 0.9790049222692055,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3212,
+              3761
+            ],
+            "shift_xy": [
+              12,
+              117
+            ],
+            "score": 0.9787935258007198,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3095,
+          3749
+        ]
+      }
+    },
+    {
+      "id": "01725u",
+      "file": "01725u.jpg",
+      "group": "provided",
+      "sha256": "4066fbb4c7d9b0dbd731b832b5b2776aa4b1e3c930491aa3dad55a026839b96b",
+      "input_size_wh": [
+        3731,
+        9695
+      ],
+      "channel_size_hw": [
+        3231,
+        3731
+      ],
+      "discarded_bottom_rows": 2,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            4,
+            7
+          ],
+          "r_shift_xy": [
+            7,
+            14
+          ],
+          "scores": [
+            0.9754025697816514,
+            0.9568127034641998
+          ],
+          "seconds": 0.4505196999962209,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            4,
+            7
+          ],
+          "r_shift_xy": [
+            6,
+            14
+          ],
+          "scores": [
+            18.915849370273516,
+            52.24487604014573
+          ],
+          "seconds": 0.26703229999839095,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          44,
+          77
+        ],
+        "r_shift_xy": [
+          77,
+          161
+        ],
+        "seconds": 2.416964600000938,
+        "g_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              1,
+              2
+            ],
+            "score": 0.9770469848056617,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              3,
+              5
+            ],
+            "score": 0.9779849253734552,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              404,
+              467
+            ],
+            "shift_xy": [
+              6,
+              10
+            ],
+            "score": 0.9747104028698113,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              808,
+              933
+            ],
+            "shift_xy": [
+              11,
+              19
+            ],
+            "score": 0.9720086411065311,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1616,
+              1866
+            ],
+            "shift_xy": [
+              22,
+              39
+            ],
+            "score": 0.9671687564917076,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3231,
+              3731
+            ],
+            "shift_xy": [
+              44,
+              77
+            ],
+            "score": 0.9642064648221986,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              2,
+              5
+            ],
+            "score": 0.9632923037889071,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              5,
+              10
+            ],
+            "score": 0.9603071536202508,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              404,
+              467
+            ],
+            "shift_xy": [
+              10,
+              20
+            ],
+            "score": 0.9556740265397379,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              808,
+              933
+            ],
+            "shift_xy": [
+              19,
+              40
+            ],
+            "score": 0.9509319559287415,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1616,
+              1866
+            ],
+            "shift_xy": [
+              39,
+              81
+            ],
+            "score": 0.9467550954487525,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3231,
+              3731
+            ],
+            "shift_xy": [
+              77,
+              161
+            ],
+            "score": 0.9440880336538804,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3070,
+          3654
+        ]
+      }
+    },
+    {
+      "id": "01728v",
+      "file": "01728v.jpg",
+      "group": "provided",
+      "sha256": "fb9a685e4fac6e2dadf75ad28fb56fee2ad651814eaa2b90e5c52f3f3ac20812",
+      "input_size_wh": [
+        397,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        397
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            1,
+            7
+          ],
+          "r_shift_xy": [
+            1,
+            15
+          ],
+          "scores": [
+            0.984481775295196,
+            0.9731218925038697
+          ],
+          "seconds": 0.41302559999894584,
+          "channel_size_hw": [
+            275,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            1,
+            7
+          ],
+          "r_shift_xy": [
+            1,
+            15
+          ],
+          "scores": [
+            23.081527380430444,
+            39.28097582217047
+          ],
+          "seconds": 0.24600780000037048,
+          "channel_size_hw": [
+            275,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          1,
+          8
+        ],
+        "r_shift_xy": [
+          1,
+          18
+        ],
+        "seconds": 0.0909858999948483,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.9825387214334388,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9833174046919402,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              397
+            ],
+            "shift_xy": [
+              1,
+              8
+            ],
+            "score": 0.9819088201698702,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              1,
+              5
+            ],
+            "score": 0.9676708412966752,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              1,
+              9
+            ],
+            "score": 0.9738043874630693,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              397
+            ],
+            "shift_xy": [
+              1,
+              18
+            ],
+            "score": 0.9711902391068357,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          323,
+          396
+        ]
+      }
+    },
+    {
+      "id": "01861a",
+      "file": "01861a.jpg",
+      "group": "provided",
+      "sha256": "1f3ad8654e4b14d9e34f028b7cb680500e5166a884a2028fab1c3d5d1d7ecf66",
+      "input_size_wh": [
+        3741,
+        9686
+      ],
+      "channel_size_hw": [
+        3228,
+        3741
+      ],
+      "discarded_bottom_rows": 2,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            3,
+            6
+          ],
+          "r_shift_xy": [
+            5,
+            13
+          ],
+          "scores": [
+            0.9896127771565095,
+            0.9778141576657744
+          ],
+          "seconds": 0.4036610000039218,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            3,
+            6
+          ],
+          "r_shift_xy": [
+            5,
+            13
+          ],
+          "scores": [
+            26.409871160082286,
+            43.23087285371431
+          ],
+          "seconds": 0.2558086999997613,
+          "channel_size_hw": [
+            276,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          38,
+          71
+        ],
+        "r_shift_xy": [
+          63,
+          148
+        ],
+        "seconds": 2.4593573000020115,
+        "g_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              1,
+              2
+            ],
+            "score": 0.9907494010602536,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              2,
+              4
+            ],
+            "score": 0.9888185285199237,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              404,
+              468
+            ],
+            "shift_xy": [
+              5,
+              9
+            ],
+            "score": 0.9895020274782328,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              807,
+              936
+            ],
+            "shift_xy": [
+              10,
+              18
+            ],
+            "score": 0.9882401731647972,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1614,
+              1871
+            ],
+            "shift_xy": [
+              19,
+              36
+            ],
+            "score": 0.9873430267134836,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3228,
+              3741
+            ],
+            "shift_xy": [
+              38,
+              71
+            ],
+            "score": 0.9868866935372183,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              101,
+              117
+            ],
+            "shift_xy": [
+              2,
+              5
+            ],
+            "score": 0.9794829601820956,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              202,
+              234
+            ],
+            "shift_xy": [
+              4,
+              9
+            ],
+            "score": 0.9800291803812875,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              404,
+              468
+            ],
+            "shift_xy": [
+              8,
+              18
+            ],
+            "score": 0.9780717133266725,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              807,
+              936
+            ],
+            "shift_xy": [
+              16,
+              37
+            ],
+            "score": 0.9778050193165914,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              1614,
+              1871
+            ],
+            "shift_xy": [
+              31,
+              74
+            ],
+            "score": 0.9770155345969838,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              3228,
+              3741
+            ],
+            "shift_xy": [
+              63,
+              148
+            ],
+            "score": 0.9765134587202771,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          3080,
+          3678
+        ]
+      }
+    },
+    {
+      "id": "10131v",
+      "file": "10131v.jpg",
+      "group": "provided",
+      "sha256": "cbbba6e13f50a5a77e040e72b3cbceada21c28587f356f8899caa116edd0da9f",
+      "input_size_wh": [
+        400,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        400
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            4
+          ],
+          "r_shift_xy": [
+            2,
+            9
+          ],
+          "scores": [
+            0.9900667821236886,
+            0.9773833375222093
+          ],
+          "seconds": 0.38078029999451246,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            2,
+            4
+          ],
+          "r_shift_xy": [
+            2,
+            9
+          ],
+          "scores": [
+            35.87489755049277,
+            57.13967771462597
+          ],
+          "seconds": 0.26541439999709837,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          6
+        ],
+        "r_shift_xy": [
+          3,
+          12
+        ],
+        "seconds": 0.08640310000191675,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              1,
+              1
+            ],
+            "score": 0.9901879162481791,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9912945048525656,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              400
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.9885623527433548,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9799963920000274,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.977742293153933,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              400
+            ],
+            "shift_xy": [
+              3,
+              12
+            ],
+            "score": 0.9760359694939906,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          329,
+          397
+        ]
+      }
+    },
+    {
+      "id": "31421v",
+      "file": "31421v.jpg",
+      "group": "provided",
+      "sha256": "63c3e1bd5419fe716838f5164b9b5f698d6fb1561586d994840acba49998ca60",
+      "input_size_wh": [
+        398,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        398
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            0,
+            7
+          ],
+          "r_shift_xy": [
+            0,
+            11
+          ],
+          "scores": [
+            0.9978597065813078,
+            0.9893447724854852
+          ],
+          "seconds": 0.3892017999969539,
+          "channel_size_hw": [
+            274,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            0,
+            7
+          ],
+          "r_shift_xy": [
+            0,
+            11
+          ],
+          "scores": [
+            29.729845545607603,
+            35.90783635028843
+          ],
+          "seconds": 0.243588199999067,
+          "channel_size_hw": [
+            274,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          0,
+          8
+        ],
+        "r_shift_xy": [
+          0,
+          13
+        ],
+        "seconds": 0.08601869999984046,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              2
+            ],
+            "score": 0.998337788716382,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              0,
+              4
+            ],
+            "score": 0.9979402730668683,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              398
+            ],
+            "shift_xy": [
+              0,
+              8
+            ],
+            "score": 0.9967541757050639,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              0,
+              3
+            ],
+            "score": 0.9909037704150332,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              199
+            ],
+            "shift_xy": [
+              0,
+              7
+            ],
+            "score": 0.9895779403506211,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              398
+            ],
+            "shift_xy": [
+              0,
+              13
+            ],
+            "score": 0.9884247694382359,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          328,
+          398
+        ]
+      }
+    }
+  ]
+}

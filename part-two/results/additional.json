@@ -1,0 +1,312 @@
+{
+  "parameters": {
+    "metric": "ncc",
+    "radius": 15,
+    "refine_radius": 2,
+    "min_size": 160,
+    "border": 0.12
+  },
+  "single_width": 320,
+  "coordinate_convention": "Applied shift (x,y): positive right/down; B is fixed.",
+  "timing_scope": "Alignment of G and R only; excludes input/output, resize for single-scale, and compositing.",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.3",
+    "pillow": "11.1.0"
+  },
+  "count": 2,
+  "records": [
+    {
+      "id": "00166v",
+      "file": "00166v.jpg",
+      "group": "additional",
+      "sha256": "bb2bb228d6fd4b296658a5a50acfc6f29eab32c6caf440861a9086737145359b",
+      "input_size_wh": [
+        399,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        399
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            2,
+            2
+          ],
+          "r_shift_xy": [
+            3,
+            10
+          ],
+          "scores": [
+            0.9711957559314512,
+            0.9586983492925342
+          ],
+          "seconds": 0.384176400002616,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            2,
+            2
+          ],
+          "r_shift_xy": [
+            3,
+            10
+          ],
+          "scores": [
+            35.96312950769035,
+            36.311219403881395
+          ],
+          "seconds": 0.2726378000006662,
+          "channel_size_hw": [
+            273,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          2,
+          3
+        ],
+        "r_shift_xy": [
+          4,
+          12
+        ],
+        "seconds": 0.08548150000569876,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              1,
+              0
+            ],
+            "score": 0.9725507991813205,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              1,
+              1
+            ],
+            "score": 0.9726179785981566,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              399
+            ],
+            "shift_xy": [
+              2,
+              3
+            ],
+            "score": 0.9672513390582695,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              100
+            ],
+            "shift_xy": [
+              1,
+              3
+            ],
+            "score": 0.9670418578710218,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              200
+            ],
+            "shift_xy": [
+              2,
+              6
+            ],
+            "score": 0.960333888535655,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              399
+            ],
+            "shift_xy": [
+              4,
+              12
+            ],
+            "score": 0.9546109292211998,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          329,
+          395
+        ]
+      }
+    },
+    {
+      "id": "00637v",
+      "file": "00637v.jpg",
+      "group": "additional",
+      "sha256": "2b4f69eda9dc83eb3e54f9086247d095003e0ffb0d34d7aa5ff3da4021ed96a8",
+      "input_size_wh": [
+        394,
+        1024
+      ],
+      "channel_size_hw": [
+        341,
+        394
+      ],
+      "discarded_bottom_rows": 1,
+      "single": {
+        "ncc": {
+          "g_shift_xy": [
+            -2,
+            3
+          ],
+          "r_shift_xy": [
+            -4,
+            8
+          ],
+          "scores": [
+            0.975306674538314,
+            0.9470095854236004
+          ],
+          "seconds": 0.38273250000202097,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        },
+        "l2": {
+          "g_shift_xy": [
+            -2,
+            3
+          ],
+          "r_shift_xy": [
+            -4,
+            8
+          ],
+          "scores": [
+            22.420545485673596,
+            47.03991242636149
+          ],
+          "seconds": 0.24202250000234926,
+          "channel_size_hw": [
+            277,
+            320
+          ]
+        }
+      },
+      "pyramid": {
+        "g_shift_xy": [
+          -2,
+          4
+        ],
+        "r_shift_xy": [
+          -5,
+          10
+        ],
+        "seconds": 0.09436740000091959,
+        "g_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              -1,
+              1
+            ],
+            "score": 0.9828660473196477,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              197
+            ],
+            "shift_xy": [
+              -1,
+              2
+            ],
+            "score": 0.981103222571553,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              394
+            ],
+            "shift_xy": [
+              -2,
+              4
+            ],
+            "score": 0.9594163650512163,
+            "radius": 2
+          }
+        ],
+        "r_trace": [
+          {
+            "shape_hw": [
+              86,
+              99
+            ],
+            "shift_xy": [
+              -1,
+              3
+            ],
+            "score": 0.96803016996448,
+            "radius": 15
+          },
+          {
+            "shape_hw": [
+              171,
+              197
+            ],
+            "shift_xy": [
+              -3,
+              5
+            ],
+            "score": 0.9505759628063478,
+            "radius": 2
+          },
+          {
+            "shape_hw": [
+              341,
+              394
+            ],
+            "shift_xy": [
+              -5,
+              10
+            ],
+            "score": 0.9350357204936052,
+            "radius": 2
+          }
+        ],
+        "output_size_hw": [
+          331,
+          389
+        ]
+      }
+    }
+  ]
+}

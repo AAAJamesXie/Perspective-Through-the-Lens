@@ -1,0 +1,19 @@
+{
+  "accessed": "2026-09-26",
+  "credit": "Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division",
+  "note": "Original three-frame grayscale JPEG scans, not restored color composites. Official catalog records state no known restrictions on publication. Downloaded using a browser User-Agent and download=1 after plain URLs returned HTTP 403.",
+  "sources": [
+    {
+      "file": "00166v.jpg",
+      "title": "V Malorossii (In Little Russia [i.e. Ukraine])",
+      "item_url": "https://www.loc.gov/pictures/collection/prok/item/2018679030/",
+      "download_url": "https://tile.loc.gov/storage-services/service/pnp/prok/00100/00166v.jpg?download=1"
+    },
+    {
+      "file": "00637v.jpg",
+      "title": "Probnaia shtolnia (Trial adit; iron ore piled in front)",
+      "item_url": "https://www.loc.gov/pictures/collection/prok/item/2018679621/",
+      "download_url": "https://tile.loc.gov/storage-services/service/pnp/prok/00600/00637v.jpg?download=1"
+    }
+  ]
+}

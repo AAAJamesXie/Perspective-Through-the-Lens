@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Handwritten L2/NCC alignment and coarse-to-fine image pyramids for Prokudin-Gorskii glass plates.">
+<title>Recovering Color — SYDE 671 Part Two</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="report.css"></head>
+<body class="color-page"><header class="site-header shell"><a class="brand" href="../index.html"><span class="brand-mark">◎</span><span>Perspective<br><small>through the lens</small></span></a>
+<nav class="header-nav" aria-label="Main navigation"><a href="../index.html">Home <span aria-hidden="true">↗</span></a><a href="../index.html#part-one">Part One <span aria-hidden="true">↗</span></a><a href="./index.html" aria-current="page">Part Two <span aria-hidden="true">↗</span></a><a href="../index.html#about">About <span aria-hidden="true">↗</span></a></nav></header>
+<main>
+<section class="report-hero shell"><div><p class="eyebrow">SYDE 671 · Assignment 1 · Part Two</p>
+<h1>Three exposures.<br><em>One world in color.</em></h1>
+<p class="lead">Reconstructing the Prokudin-Gorskii collection through channel alignment, exhaustive search and coarse-to-fine image pyramids.</p>
+<p class="byline">James Xie · University of Waterloo · Fall 2026</p>
+<div class="stats"><div><strong>18 + 2</strong><span>Provided + additional plates</span></div><div><strong>6</strong><span>High-resolution input scans</span></div><div><strong>2.74 s</strong><span>Slowest provided alignment</span></div></div></div>
+<figure><img src="results/media/provided/00458u-pyramid.jpg" alt="Reconstructed locomotive photograph" loading="eager"><figcaption>Handwritten NCC pyramid · original scan processed at 3741 × 9715</figcaption></figure>
+</section>
+<nav class="report-index shell" aria-label="Report sections"><a href="#method">01 / Method</a><a href="#single">02 / Experiments</a><a href="#pyramid">03 / Pyramid</a><a href="#gallery">04 / Results</a><a href="#additional">05 / More examples</a><a href="#discussion">06 / Discussion</a></nav>
+<section class="shell report-section" id="method"><p class="eyebrow">01 / Method</p><h2>Recover the alignment,<br>then recover the color.</h2>
+<p>The inputs are grayscale scans containing three vertically stacked exposures in blue, green and red order. The program divides each scan into three equal-height arrays, discards at most two trailing rows, keeps blue fixed and translates green and red. The final channel order is red, green, blue.</p>
+<div class="workflow"><span>Stacked B / G / R</span><b>→</b><span>Split & normalize</span><b>→</b><span>Estimate G / R shifts</span><b>→</b><span>Compose RGB</span></div>
+<div class="method-grid"><article><h3>Single-scale search</h3><p>For each moving channel, try all 961 integer shifts in a ±15-pixel window. Compare a fixed interior region of blue against the shifted channel. Exclude a 12% scoring border on every side, expanding the exclusion when needed to keep every tested coordinate in bounds.</p>
+<p>All candidates at a level use exactly the same reference pixels. This avoids favoring shifts that compare a smaller overlap or introduce wraparound.</p></article>
+<article><h3>Two baseline metrics</h3><p class="formula">L2 = √Σ(B − C<sub>shifted</sub>)²</p><p>Choose the smallest distance. L2 is sensitive to differences in brightness across color filters.</p>
+<p class="formula">NCC = Σ(B · C<sub>shifted</sub>) / (‖B‖ ‖C<sub>shifted</sub>‖)</p><p>Choose the largest similarity. This is the normalized dot product in the handout, without mean subtraction. It compensates for multiplicative intensity changes, but not arbitrary color-dependent changes.</p></article></div>
+<p>Convert unsigned integer pixels to floating point using their dtype range. Use Pillow only for reading, writing and resizing; NumPy performs the manual search and array operations. No automatic registration or pyramid-building library is used.</p>
+</section>
+<section class="shell report-section" id="single"><p class="eyebrow">02 / Single-scale experiments</p><h2>Start small. Make each step visible.</h2>
+<p>Every provided plate receives a low-resolution experiment using channels resized to 320 pixels wide. Both L2 and NCC run on the same pixels and search window. The three examples below show the separated exposures, unaligned composite and two aligned composites. Offsets here are in <strong>low-resolution pixels</strong>.</p>
+<article class="experiment" id="experiment-1">
+          <p class="eyebrow">Detailed experiment 01</p><h3>00056v.jpg</h3>
+          <div class="triple"><figure><img src="results/media/provided/00056v-channel-b.jpg" alt="B exposure" loading="eager"><figcaption>B channel</figcaption></figure><figure><img src="results/media/provided/00056v-channel-g.jpg" alt="G exposure" loading="eager"><figcaption>G channel</figcaption></figure><figure><img src="results/media/provided/00056v-channel-r.jpg" alt="R exposure" loading="eager"><figcaption>R channel</figcaption></figure></div><div class="triple"><figure><img src="results/media/provided/00056v-low-before.jpg" alt="Unaligned RGB" loading="eager"><figcaption>Unaligned RGB</figcaption></figure><figure><img src="results/media/provided/00056v-single-l2.jpg" alt="Single-scale L2" loading="eager"><figcaption>Single-scale L2</figcaption></figure><figure><img src="results/media/provided/00056v-single-ncc.jpg" alt="Single-scale NCC" loading="eager"><figcaption>Single-scale NCC</figcaption></figure></div>
+          <p class="measurement">Low-resolution shifts: G (1, 4) · R (0, 10); same for L2 and NCC.</p>
+          <p>The church and hillside become much easier to read after registration. The colored speckles remain: the separate source exposures contain different scratches and blotches. A translation cannot restore missing emulsion.</p></article><article class="experiment" id="experiment-2">
+          <p class="eyebrow">Detailed experiment 02</p><h3>00125v.jpg</h3>
+          <div class="triple"><figure><img src="results/media/provided/00125v-channel-b.jpg" alt="B exposure" loading="eager"><figcaption>B channel</figcaption></figure><figure><img src="results/media/provided/00125v-channel-g.jpg" alt="G exposure" loading="eager"><figcaption>G channel</figcaption></figure><figure><img src="results/media/provided/00125v-channel-r.jpg" alt="R exposure" loading="eager"><figcaption>R channel</figcaption></figure></div><div class="triple"><figure><img src="results/media/provided/00125v-low-before.jpg" alt="Unaligned RGB" loading="eager"><figcaption>Unaligned RGB</figcaption></figure><figure><img src="results/media/provided/00125v-single-l2.jpg" alt="Single-scale L2" loading="eager"><figcaption>Single-scale L2</figcaption></figure><figure><img src="results/media/provided/00125v-single-ncc.jpg" alt="Single-scale NCC" loading="eager"><figcaption>Single-scale NCC</figcaption></figure></div>
+          <p class="measurement">Low-resolution shifts: G (2, 4) · R (1, 8); same for L2 and NCC.</p>
+          <p>The skyline, church and riverbank provide stable geometric structure. The two metrics select the same shifts at this reduced resolution. Narrow colored bands remain near the original plate edges.</p></article><article class="experiment" id="experiment-3">
+          <p class="eyebrow">Detailed experiment 03</p><h3>00163v.jpg</h3>
+          <div class="triple"><figure><img src="results/media/provided/00163v-channel-b.jpg" alt="B exposure" loading="eager"><figcaption>B channel</figcaption></figure><figure><img src="results/media/provided/00163v-channel-g.jpg" alt="G exposure" loading="eager"><figcaption>G channel</figcaption></figure><figure><img src="results/media/provided/00163v-channel-r.jpg" alt="R exposure" loading="eager"><figcaption>R channel</figcaption></figure></div><div class="triple"><figure><img src="results/media/provided/00163v-low-before.jpg" alt="Unaligned RGB" loading="eager"><figcaption>Unaligned RGB</figcaption></figure><figure><img src="results/media/provided/00163v-single-l2.jpg" alt="Single-scale L2" loading="eager"><figcaption>Single-scale L2</figcaption></figure><figure><img src="results/media/provided/00163v-single-ncc.jpg" alt="Single-scale NCC" loading="eager"><figcaption>Single-scale NCC</figcaption></figure></div>
+          <p class="measurement">Low-resolution shifts: G (1, -2) · R (1, -3); same for L2 and NCC.</p>
+          <p>Tree trunks and roof lines provide alignment cues. The negative vertical shifts are valid: these channels must move upward relative to blue. The two metrics again select the same low-resolution shifts.</p></article>
+<div class="table-block"><h3>All low-resolution experiments</h3><p>Each shift cell lists G first, then R. Times are NCC / L2 in seconds. Plate numbers map to the labeled results below.</p>
+<table><thead><tr><th>Plate</th><th>NCC shifts</th><th>L2 shifts</th><th>Time (s)</th><th>Images</th></tr></thead><tbody><tr><th><a href="#plate-1">Plate 01</a></th>
+          <td>(1, 4)<br>(0, 10)</td>
+          <td>(1, 4)<br>(0, 10)</td>
+          <td>0.383 / 0.237</td>
+          <td><a href="results/media/provided/00056v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/00056v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-2">Plate 02</a></th>
+          <td>(2, 4)<br>(1, 8)</td>
+          <td>(2, 4)<br>(1, 8)</td>
+          <td>0.387 / 0.236</td>
+          <td><a href="results/media/provided/00125v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/00125v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-3">Plate 03</a></th>
+          <td>(1, -2)<br>(1, -3)</td>
+          <td>(1, -2)<br>(1, -3)</td>
+          <td>0.378 / 0.256</td>
+          <td><a href="results/media/provided/00163v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/00163v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-4">Plate 04</a></th>
+          <td>(0, 4)<br>(3, 8)</td>
+          <td>(0, 4)<br>(3, 8)</td>
+          <td>0.442 / 0.287</td>
+          <td><a href="results/media/provided/00458u-single-ncc.jpg">NCC</a> · <a href="results/media/provided/00458u-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-5">Plate 05</a></th>
+          <td>(-2, 5)<br>(-4, 10)</td>
+          <td>(-2, 5)<br>(-4, 10)</td>
+          <td>0.441 / 0.269</td>
+          <td><a href="results/media/provided/00804v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/00804v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-6">Plate 06</a></th>
+          <td>(1, 5)<br>(1, 11)</td>
+          <td>(1, 5)<br>(1, 11)</td>
+          <td>0.382 / 0.259</td>
+          <td><a href="results/media/provided/01007a-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01007a-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-7">Plate 07</a></th>
+          <td>(2, 2)<br>(3, 6)</td>
+          <td>(2, 2)<br>(3, 6)</td>
+          <td>0.474 / 0.315</td>
+          <td><a href="results/media/provided/01047u-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01047u-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-8">Plate 08</a></th>
+          <td>(1, 5)<br>(3, 9)</td>
+          <td>(1, 5)<br>(2, 9)</td>
+          <td>0.416 / 0.281</td>
+          <td><a href="results/media/provided/01164v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01164v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-9">Plate 09</a></th>
+          <td>(2, 5)<br>(2, 11)</td>
+          <td>(2, 5)<br>(2, 11)</td>
+          <td>0.400 / 0.241</td>
+          <td><a href="results/media/provided/01269v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01269v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-10">Plate 10</a></th>
+          <td>(2, 5)<br>(1, 10)</td>
+          <td>(1, 5)<br>(1, 10)</td>
+          <td>0.409 / 0.244</td>
+          <td><a href="results/media/provided/01522v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01522v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-11">Plate 11</a></th>
+          <td>(1, 6)<br>(1, 13)</td>
+          <td>(1, 6)<br>(1, 13)</td>
+          <td>0.385 / 0.258</td>
+          <td><a href="results/media/provided/01597v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01597v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-12">Plate 12</a></th>
+          <td>(0, 7)<br>(-1, 13)</td>
+          <td>(0, 7)<br>(-1, 14)</td>
+          <td>0.391 / 0.249</td>
+          <td><a href="results/media/provided/01598v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01598v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-13">Plate 13</a></th>
+          <td>(1, 5)<br>(1, 10)</td>
+          <td>(1, 5)<br>(1, 10)</td>
+          <td>0.509 / 0.346</td>
+          <td><a href="results/media/provided/01657u-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01657u-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-14">Plate 14</a></th>
+          <td>(4, 7)<br>(7, 14)</td>
+          <td>(4, 7)<br>(6, 14)</td>
+          <td>0.451 / 0.267</td>
+          <td><a href="results/media/provided/01725u-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01725u-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-15">Plate 15</a></th>
+          <td>(1, 7)<br>(1, 15)</td>
+          <td>(1, 7)<br>(1, 15)</td>
+          <td>0.413 / 0.246</td>
+          <td><a href="results/media/provided/01728v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01728v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-16">Plate 16</a></th>
+          <td>(3, 6)<br>(5, 13)</td>
+          <td>(3, 6)<br>(5, 13)</td>
+          <td>0.404 / 0.256</td>
+          <td><a href="results/media/provided/01861a-single-ncc.jpg">NCC</a> · <a href="results/media/provided/01861a-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-17">Plate 17</a></th>
+          <td>(2, 4)<br>(2, 9)</td>
+          <td>(2, 4)<br>(2, 9)</td>
+          <td>0.381 / 0.265</td>
+          <td><a href="results/media/provided/10131v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/10131v-single-l2.jpg">L2</a></td></tr><tr><th><a href="#plate-18">Plate 18</a></th>
+          <td>(0, 7)<br>(0, 11)</td>
+          <td>(0, 7)<br>(0, 11)</td>
+          <td>0.389 / 0.244</td>
+          <td><a href="results/media/provided/31421v-single-ncc.jpg">NCC</a> · <a href="results/media/provided/31421v-single-l2.jpg">L2</a></td></tr></tbody></table></div></section>
+<section class="shell report-section" id="pyramid"><p class="eyebrow">03 / Coarse-to-fine alignment</p><h2>Large shifts.<br>Small searches.</h2>
+<p>Explicitly build a list of progressively smaller images using bilinear downsampling by about two. Stop when the shorter channel dimension is at most 160 pixels. At the smallest level, search ±15 pixels. At each finer level, multiply the estimate by the actual width/height ratios, round to integer pixels and refine within ±2 pixels. Using actual ratios handles odd image sizes.</p>
+<p>All 18 provided scans are processed at their original resolution. The same NCC metric and parameters apply to every image; no per-image tuning is used. A finer level tests only 25 candidates per moving channel, instead of exhaustively searching for shifts exceeding 100 pixels at full size.</p>
+<div class="table-block"><h3>A pyramid in motion</h3><p>Intermediate estimates for 00458u.jpg; offsets are measured in pixels of the indicated level.</p>
+<table><thead><tr><th>Channel size</th><th>G shift</th><th>R shift</th><th>Search radius</th></tr></thead><tbody><tr><td>117 × 102</td><td>(0, 1)</td><td>(1, 3)</td><td>±15</td></tr><tr><td>234 × 203</td><td>(0, 3)</td><td>(2, 6)</td><td>±2</td></tr><tr><td>468 × 405</td><td>(1, 5)</td><td>(4, 11)</td><td>±2</td></tr><tr><td>936 × 810</td><td>(1, 11)</td><td>(8, 22)</td><td>±2</td></tr><tr><td>1871 × 1619</td><td>(3, 21)</td><td>(16, 44)</td><td>±2</td></tr><tr><td>3741 × 3238</td><td>(6, 43)</td><td>(32, 87)</td><td>±2</td></tr></tbody></table></div>
+<p>Output cropping removes only pixels without support in all three shifted channels. This is a geometric validity crop, <strong>not</strong> automatic detection of the original photographic borders; colored plate borders therefore remain visible.</p>
+<div class="table-block"><h3>Original-resolution offsets and runtime</h3><p>Shifts are (x, y), positive right/down, applied to G and R relative to B. Timing covers both channel alignments, including pyramid construction, but excludes loading, compositing and image saving. Median: 0.089 s; range: 0.078–2.741 s on this Windows environment. No full-resolution brute-force timing comparison was performed.</p>
+<table><thead><tr><th>Plate</th><th>G shift</th><th>R shift</th><th>Levels</th><th>Time (s)</th></tr></thead><tbody><tr><th><a href="#plate-1">Plate 01</a></th>
+          <td>(1, 6)</td><td>(1, 13)</td>
+          <td>3</td><td>0.078</td></tr><tr><th><a href="#plate-2">Plate 02</a></th>
+          <td>(2, 5)</td><td>(1, 10)</td>
+          <td>3</td><td>0.081</td></tr><tr><th><a href="#plate-3">Plate 03</a></th>
+          <td>(1, -3)</td><td>(1, -4)</td>
+          <td>3</td><td>0.079</td></tr><tr><th><a href="#plate-4">Plate 04</a></th>
+          <td>(6, 43)</td><td>(32, 87)</td>
+          <td>6</td><td>2.390</td></tr><tr><th><a href="#plate-5">Plate 05</a></th>
+          <td>(-2, 6)</td><td>(-4, 13)</td>
+          <td>3</td><td>0.087</td></tr><tr><th><a href="#plate-6">Plate 06</a></th>
+          <td>(14, 60)</td><td>(13, 129)</td>
+          <td>6</td><td>2.382</td></tr><tr><th><a href="#plate-7">Plate 07</a></th>
+          <td>(20, 24)</td><td>(33, 71)</td>
+          <td>6</td><td>2.741</td></tr><tr><th><a href="#plate-8">Plate 08</a></th>
+          <td>(2, 6)</td><td>(3, 11)</td>
+          <td>3</td><td>0.090</td></tr><tr><th><a href="#plate-9">Plate 09</a></th>
+          <td>(2, 6)</td><td>(3, 13)</td>
+          <td>3</td><td>0.080</td></tr><tr><th><a href="#plate-10">Plate 10</a></th>
+          <td>(2, 6)</td><td>(2, 13)</td>
+          <td>3</td><td>0.079</td></tr><tr><th><a href="#plate-11">Plate 11</a></th>
+          <td>(1, 7)</td><td>(1, 16)</td>
+          <td>3</td><td>0.081</td></tr><tr><th><a href="#plate-12">Plate 12</a></th>
+          <td>(0, 8)</td><td>(-1, 16)</td>
+          <td>3</td><td>0.096</td></tr><tr><th><a href="#plate-13">Plate 13</a></th>
+          <td>(9, 55)</td><td>(12, 117)</td>
+          <td>6</td><td>2.473</td></tr><tr><th><a href="#plate-14">Plate 14</a></th>
+          <td>(44, 77)</td><td>(77, 161)</td>
+          <td>6</td><td>2.417</td></tr><tr><th><a href="#plate-15">Plate 15</a></th>
+          <td>(1, 8)</td><td>(1, 18)</td>
+          <td>3</td><td>0.091</td></tr><tr><th><a href="#plate-16">Plate 16</a></th>
+          <td>(38, 71)</td><td>(63, 148)</td>
+          <td>6</td><td>2.459</td></tr><tr><th><a href="#plate-17">Plate 17</a></th>
+          <td>(2, 6)</td><td>(3, 12)</td>
+          <td>3</td><td>0.086</td></tr><tr><th><a href="#plate-18">Plate 18</a></th>
+          <td>(0, 8)</td><td>(0, 13)</td>
+          <td>3</td><td>0.086</td></tr></tbody></table></div></section>
+<section class="shell report-section" id="gallery"><p class="eyebrow">04 / All provided images</p><h2>The complete reconstruction set.</h2>
+<p>Each pair shows the unaligned composite and the NCC pyramid result. Click an aligned image to open the saved result at original pixel scale, after the common-support crop. Web previews are at most 900 pixels wide.</p><article class="result" id="plate-1">
+          <div class="result-heading"><div><p class="eyebrow">Plate 01 / provided</p><h3>00056v.jpg</h3></div>
+          <p>398 × 1024 input<br>0.078 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/00056v-before.jpg" alt="Unaligned 00056v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/00056v.jpg"><img src="results/media/provided/00056v-pyramid.jpg" alt="NCC pyramid 00056v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (1, 6) · R (1, 13) · applied at original resolution</p><p class="caveat">Source damage remains visible as colored blotches.</p></article><article class="result" id="plate-2">
+          <div class="result-heading"><div><p class="eyebrow">Plate 02 / provided</p><h3>00125v.jpg</h3></div>
+          <p>400 × 1024 input<br>0.081 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/00125v-before.jpg" alt="Unaligned 00125v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/00125v.jpg"><img src="results/media/provided/00125v-pyramid.jpg" alt="NCC pyramid 00125v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 5) · R (1, 10) · applied at original resolution</p></article><article class="result" id="plate-3">
+          <div class="result-heading"><div><p class="eyebrow">Plate 03 / provided</p><h3>00163v.jpg</h3></div>
+          <p>387 × 1024 input<br>0.079 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/00163v-before.jpg" alt="Unaligned 00163v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/00163v.jpg"><img src="results/media/provided/00163v-pyramid.jpg" alt="NCC pyramid 00163v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (1, -3) · R (1, -4) · applied at original resolution</p></article><article class="result" id="plate-4">
+          <div class="result-heading"><div><p class="eyebrow">Plate 04 / provided</p><h3>00458u.jpg</h3></div>
+          <p>3741 × 9715 input<br>2.390 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/00458u-before.jpg" alt="Unaligned 00458u.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/00458u.jpg"><img src="results/media/provided/00458u-pyramid.jpg" alt="NCC pyramid 00458u.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (6, 43) · R (32, 87) · applied at original resolution</p></article><article class="result" id="plate-5">
+          <div class="result-heading"><div><p class="eyebrow">Plate 05 / provided</p><h3>00804v.jpg</h3></div>
+          <p>396 × 1024 input<br>0.087 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/00804v-before.jpg" alt="Unaligned 00804v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/00804v.jpg"><img src="results/media/provided/00804v-pyramid.jpg" alt="NCC pyramid 00804v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (-2, 6) · R (-4, 13) · applied at original resolution</p></article><article class="result" id="plate-6">
+          <div class="result-heading"><div><p class="eyebrow">Plate 06 / provided</p><h3>01007a.jpg</h3></div>
+          <p>3800 × 9715 input<br>2.382 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01007a-before.jpg" alt="Unaligned 01007a.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01007a.jpg"><img src="results/media/provided/01007a-pyramid.jpg" alt="NCC pyramid 01007a.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (14, 60) · R (13, 129) · applied at original resolution</p></article><article class="result" id="plate-7">
+          <div class="result-heading"><div><p class="eyebrow">Plate 07 / provided</p><h3>01047u.jpg</h3></div>
+          <p>3741 × 9656 input<br>2.741 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01047u-before.jpg" alt="Unaligned 01047u.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01047u.jpg"><img src="results/media/provided/01047u-pyramid.jpg" alt="NCC pyramid 01047u.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (20, 24) · R (33, 71) · applied at original resolution</p></article><article class="result" id="plate-8">
+          <div class="result-heading"><div><p class="eyebrow">Plate 08 / provided</p><h3>01164v.jpg</h3></div>
+          <p>396 × 1024 input<br>0.090 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01164v-before.jpg" alt="Unaligned 01164v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01164v.jpg"><img src="results/media/provided/01164v-pyramid.jpg" alt="NCC pyramid 01164v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 6) · R (3, 11) · applied at original resolution</p></article><article class="result" id="plate-9">
+          <div class="result-heading"><div><p class="eyebrow">Plate 09 / provided</p><h3>01269v.jpg</h3></div>
+          <p>395 × 1024 input<br>0.080 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01269v-before.jpg" alt="Unaligned 01269v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01269v.jpg"><img src="results/media/provided/01269v-pyramid.jpg" alt="NCC pyramid 01269v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 6) · R (3, 13) · applied at original resolution</p></article><article class="result" id="plate-10">
+          <div class="result-heading"><div><p class="eyebrow">Plate 10 / provided</p><h3>01522v.jpg</h3></div>
+          <p>391 × 1024 input<br>0.079 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01522v-before.jpg" alt="Unaligned 01522v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01522v.jpg"><img src="results/media/provided/01522v-pyramid.jpg" alt="NCC pyramid 01522v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 6) · R (2, 13) · applied at original resolution</p><p class="caveat">Inspect faces, hands and foliage for local residual color fringes; a single translation cannot model independently moving subjects.</p></article><article class="result" id="plate-11">
+          <div class="result-heading"><div><p class="eyebrow">Plate 11 / provided</p><h3>01597v.jpg</h3></div>
+          <p>395 × 1024 input<br>0.081 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01597v-before.jpg" alt="Unaligned 01597v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01597v.jpg"><img src="results/media/provided/01597v-pyramid.jpg" alt="NCC pyramid 01597v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (1, 7) · R (1, 16) · applied at original resolution</p><p class="caveat">Inspect faces, hands and foliage for local residual color fringes; a single translation cannot model independently moving subjects.</p></article><article class="result" id="plate-12">
+          <div class="result-heading"><div><p class="eyebrow">Plate 12 / provided</p><h3>01598v.jpg</h3></div>
+          <p>392 × 1024 input<br>0.096 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01598v-before.jpg" alt="Unaligned 01598v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01598v.jpg"><img src="results/media/provided/01598v-pyramid.jpg" alt="NCC pyramid 01598v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (0, 8) · R (-1, 16) · applied at original resolution</p><p class="caveat">Inspect faces, hands and foliage for local residual color fringes; a single translation cannot model independently moving subjects.</p></article><article class="result" id="plate-13">
+          <div class="result-heading"><div><p class="eyebrow">Plate 13 / provided</p><h3>01657u.jpg</h3></div>
+          <p>3761 × 9637 input<br>2.473 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01657u-before.jpg" alt="Unaligned 01657u.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01657u.jpg"><img src="results/media/provided/01657u-pyramid.jpg" alt="NCC pyramid 01657u.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (9, 55) · R (12, 117) · applied at original resolution</p><p class="caveat">Inspect faces, hands and foliage for local residual color fringes; a single translation cannot model independently moving subjects.</p></article><article class="result" id="plate-14">
+          <div class="result-heading"><div><p class="eyebrow">Plate 14 / provided</p><h3>01725u.jpg</h3></div>
+          <p>3731 × 9695 input<br>2.417 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01725u-before.jpg" alt="Unaligned 01725u.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01725u.jpg"><img src="results/media/provided/01725u-pyramid.jpg" alt="NCC pyramid 01725u.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (44, 77) · R (77, 161) · applied at original resolution</p></article><article class="result" id="plate-15">
+          <div class="result-heading"><div><p class="eyebrow">Plate 15 / provided</p><h3>01728v.jpg</h3></div>
+          <p>397 × 1024 input<br>0.091 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01728v-before.jpg" alt="Unaligned 01728v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01728v.jpg"><img src="results/media/provided/01728v-pyramid.jpg" alt="NCC pyramid 01728v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (1, 8) · R (1, 18) · applied at original resolution</p></article><article class="result" id="plate-16">
+          <div class="result-heading"><div><p class="eyebrow">Plate 16 / provided</p><h3>01861a.jpg</h3></div>
+          <p>3741 × 9686 input<br>2.459 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/01861a-before.jpg" alt="Unaligned 01861a.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/01861a.jpg"><img src="results/media/provided/01861a-pyramid.jpg" alt="NCC pyramid 01861a.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (38, 71) · R (63, 148) · applied at original resolution</p><p class="caveat">Inspect faces, hands and foliage for local residual color fringes; a single translation cannot model independently moving subjects.</p></article><article class="result" id="plate-17">
+          <div class="result-heading"><div><p class="eyebrow">Plate 17 / provided</p><h3>10131v.jpg</h3></div>
+          <p>400 × 1024 input<br>0.086 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/10131v-before.jpg" alt="Unaligned 10131v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/10131v.jpg"><img src="results/media/provided/10131v-pyramid.jpg" alt="NCC pyramid 10131v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 6) · R (3, 12) · applied at original resolution</p></article><article class="result" id="plate-18">
+          <div class="result-heading"><div><p class="eyebrow">Plate 18 / provided</p><h3>31421v.jpg</h3></div>
+          <p>398 × 1024 input<br>0.086 s alignment</p></div>
+          <div class="pair"><figure><img src="results/media/provided/31421v-before.jpg" alt="Unaligned 31421v.jpg" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/provided/31421v.jpg"><img src="results/media/provided/31421v-pyramid.jpg" alt="NCC pyramid 31421v.jpg" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (0, 8) · R (0, 13) · applied at original resolution</p></article></section>
+<section class="shell report-section" id="additional"><p class="eyebrow">05 / Additional collection examples</p><h2>Beyond the supplied dataset.</h2>
+<p>Two additional three-frame grayscale JPEGs were downloaded from the Library of Congress, rather than using its finished color restorations. Both use exactly the same pipeline and parameters as the provided set. These examples are low-resolution scans; the large-image demonstration comes from the six supplied high-resolution scans.</p><article class="result"><p class="eyebrow">Additional collection example</p>
+          <h3>00166v.jpg</h3><p>V Malorossii (In Little Russia [i.e. Ukraine])</p>
+          <div class="pair"><figure><img src="results/media/additional/00166v-before.jpg" alt="Unaligned additional plate" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/additional/00166v.jpg"><img src="results/media/additional/00166v-pyramid.jpg" alt="Aligned additional plate" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (2, 3) · R (4, 12) · 0.085 s</p>
+          <p><a href="https://www.loc.gov/pictures/collection/prok/item/2018679030/">Official catalog record</a> · <a href="data/additional/00166v.jpg">Original grayscale scan</a> ·
+          <a href="results/media/additional/00166v-single-ncc.jpg">Single-scale NCC</a> · <a href="results/media/additional/00166v-single-l2.jpg">Single-scale L2</a></p></article><article class="result"><p class="eyebrow">Additional collection example</p>
+          <h3>00637v.jpg</h3><p>Probnaia shtolnia (Trial adit; iron ore piled in front)</p>
+          <div class="pair"><figure><img src="results/media/additional/00637v-before.jpg" alt="Unaligned additional plate" loading="eager"><figcaption>Before · unaligned RGB</figcaption></figure>
+          <figure><a href="results/full/additional/00637v.jpg"><img src="results/media/additional/00637v-pyramid.jpg" alt="Aligned additional plate" loading="eager"></a><figcaption>After · NCC pyramid</figcaption></figure></div>
+          <p class="measurement">G (-2, 4) · R (-5, 10) · 0.094 s</p>
+          <p><a href="https://www.loc.gov/pictures/collection/prok/item/2018679621/">Official catalog record</a> · <a href="data/additional/00637v.jpg">Original grayscale scan</a> ·
+          <a href="results/media/additional/00637v-single-ncc.jpg">Single-scale NCC</a> · <a href="results/media/additional/00637v-single-l2.jpg">Single-scale L2</a></p></article></section>
+<section class="shell report-section" id="discussion"><p class="eyebrow">06 / Discussion & limitations</p><h2>Alignment is only part<br>of restoration.</h2>
+<p><strong>Visual assessment:</strong> the reconstructed previews show broadly aligned scene structure. This is a qualitative inspection, not a ground-truth accuracy score. The saved high-resolution outputs remain available for closer inspection.</p>
+<p><strong>Damaged exposures:</strong> the first detailed experiment has visible scratches and blotches in its individual grayscale channels. Their disagreement produces colored speckles after composition. Searching for a different global displacement cannot reconstruct these missing details.</p>
+<p><strong>Local residuals:</strong> faces, foliage and object boundaries can retain colored fringes. Motion between sequential exposures, channel-dependent brightness and departures from pure translation are plausible causes; the current experiment does not isolate their individual contributions. The model cannot correct local motion, rotation or scale change.</p>
+<p><strong>Border artifacts:</strong> excluding borders from the score prevents them dominating the alignment, but does not restore or remove the physical borders in the final image. The common-support crop only removes wrapped pixels.</p>
+<p><strong>Optional extensions:</strong> edge-based alignment, detected-border cropping, white balance and contrast enhancement are not implemented in this baseline submission. Keeping the original intensities makes the L2/NCC results and remaining defects transparent.</p>
+<p><strong>Dataset discrepancy:</strong> the handout mentions both 5 and 20 examples and legacy image names; the supplied directory contains 18 numbered JPEGs. All 18 were processed, and three selected plates receive detailed experiments.</p>
+</section>
+<section class="shell report-section" id="reproduce"><p class="eyebrow">07 / Reproducibility</p><h2>Measurements, code & sources.</h2>
+<p>Seven synthetic-image unit tests cover channel order, 16-bit normalization, L2/NCC shift recovery, large displacements on odd dimensions, RGB composition, valid-support cropping, blank-image tie handling and invalid inputs. No mock tests are used.</p>
+<p>Run instructions are in the project README. Saved records include input SHA-256 hashes, channel dimensions, discarded rows, offsets, per-level scores and timings. NCC/L2 scores at different pyramid levels use different pixels and should not be interpreted as one comparable accuracy curve.</p>
+<ul class="downloads"><li><a href="submission/part-two-code.zip">Download source code ZIP</a></li><li><a href="submission/part-two-report.pdf">Download webpage PDF</a></li><li><a href="README.md">Reproduction instructions</a></li><li><a href="results/provided.json">All provided-image measurements</a></li><li><a href="results/additional.json">Additional-image measurements</a></li><li><a href="data/sources.json">External data provenance</a></li></ul>
+<p>Environment: Python 3.13.5, NumPy 2.3.3, Pillow 11.1.0. Measurements were collected with one sequential batch, not a statistical performance benchmark.</p>
+<p>Source images: Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division. See the linked official records above and the <a href="https://www.loc.gov/collections/prokudin-gorskii/about-this-collection/">collection overview</a>. Assignment requirements: local SYDE671 Assignment 1 handout, Part Two.</p>
+</section></main><footer class="site-footer shell"><span>Perspective, Through the Lens</span><a href="../index.html">Back to all studies ↗</a></footer></body></html>
