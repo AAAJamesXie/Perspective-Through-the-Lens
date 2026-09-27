@@ -129,12 +129,17 @@ def main():
 <p><strong>Optional extensions:</strong> edge-based alignment, detected-border cropping, white balance and contrast enhancement are not implemented in this baseline submission. Keeping the original intensities makes the L2/NCC results and remaining defects transparent.</p>
 <p><strong>Dataset discrepancy:</strong> the handout mentions both 5 and 20 examples and legacy image names; the supplied directory contains 18 numbered JPEGs. All 18 were processed, and three selected plates receive detailed experiments.</p>
 </section>
-<section class="shell report-section" id="reproduce"><p class="eyebrow">07 / Reproducibility</p><h2>Measurements, code & sources.</h2>
+<section class="shell report-section" id="reproduce"><p class="eyebrow">07 / Reproducibility</p><h2>Measurements & reproducibility.</h2>
 <p>Seven synthetic-image unit tests cover channel order, 16-bit normalization, L2/NCC shift recovery, large displacements on odd dimensions, RGB composition, valid-support cropping, blank-image tie handling and invalid inputs. No mock tests are used.</p>
 <p>Run instructions are in the project README. Saved records include input SHA-256 hashes, channel dimensions, discarded rows, offsets, per-level scores and timings. NCC/L2 scores at different pyramid levels use different pixels and should not be interpreted as one comparable accuracy curve.</p>
-<ul class="downloads"><li><a href="submission/part-two-code.zip">Download source code ZIP</a></li><li><a href="submission/part-two-report.pdf">Download webpage PDF</a></li><li><a href="README.md">Reproduction instructions</a></li><li><a href="results/provided.json">All provided-image measurements</a></li><li><a href="results/additional.json">Additional-image measurements</a></li><li><a href="data/sources.json">External data provenance</a></li></ul>
 <p>Environment: Python {report['versions']['python']}, NumPy {report['versions']['numpy']}, Pillow {report['versions']['pillow']}. Measurements were collected with one sequential batch, not a statistical performance benchmark.</p>
-<p>Source images: Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division. See the linked official records above and the <a href="https://www.loc.gov/collections/prokudin-gorskii/about-this-collection/">collection overview</a>. Assignment requirements: local SYDE671 Assignment 1 handout, Part Two.</p>
+</section>
+<section class="shell report-section" id="references"><p class="eyebrow">08 / References</p><h2>Design & image sources.</h2>
+<ol>
+<li><p><strong>Website design reference:</strong> <a href="https://www.wix.com/website-template/view/html/wh-1329">Wix — AI Blog (Abstract)</a>. Visual reference for the independently implemented static website.</p></li>
+<li><p><strong>Additional photograph:</strong> <a href="{escape(sources[0]['item_url'])}">{escape(sources[0]['title'])}</a>. Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division.</p></li>
+<li><p><strong>Additional photograph:</strong> <a href="{escape(sources[1]['item_url'])}">{escape(sources[1]['title'])}</a>. Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division.</p></li>
+</ol>
 </section></main><footer class="site-footer shell"><span>Perspective, Through the Lens</span><a href="../index.html">Back to all studies ↗</a></footer></body></html>'''
     (HERE/'index.html').write_text(html, encoding='utf-8')
     print(f'Built webpage: {len(rows)} provided + {len(extra["records"])} additional images.')
