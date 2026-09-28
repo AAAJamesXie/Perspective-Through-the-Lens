@@ -106,3 +106,5 @@ The report reorganizes the existing three Part One pages for print. A classmate 
 Portrait distances and zoom settings come from the existing photographer notes. Portrait and architectural equivalent focal lengths, plus the dolly endpoint values, were checked against original HEIC metadata. Street distances were not recorded. Handheld framing and dolly stabilization are approximate. No new measurements, new photographs or synthetic animation frames were created.
 ''', encoding='utf-8')
 print(WEB / 'index.html')
+from sync_site import sync_site
+sync_site()
