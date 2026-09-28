@@ -2,6 +2,9 @@
 from pathlib import Path
 import hashlib
 import json
+import re
+import unicodedata
+from urllib.parse import urlparse, unquote, quote
 from zipfile import ZipFile, ZIP_DEFLATED
 from PIL import Image
 from pypdf import PdfReader, PdfWriter
@@ -18,6 +21,14 @@ for page in writer.pages:
         action = ref.get_object().get('/A')
         if action and str(action.get('/URI', '')).endswith('the-dolly-zoom.gif'):
             action[NameObject('/URI')] = TextStringObject('the-dolly-zoom.gif')
+        elif action and str(action.get('/URI', '')).startswith('file:'):
+            url = urlparse(str(action['/URI']))
+            local = Path(unquote(url.path).lstrip('/'))
+            relative = local.relative_to(HERE.parent).as_posix()
+            target = 'https://aaajamesxie.github.io/Perspective-Through-the-Lens/' + quote(relative, safe='/')
+            if url.fragment:
+                target += '#' + url.fragment
+            action[NameObject('/URI')] = TextStringObject(target)
 writer.add_metadata({'/Title': 'SYDE 671 Assignment 1 - Part One', '/Author': 'James Xie', '/Subject': 'Portrait perspective, architectural compression and dolly zoom'})
 temp = OUT / 'report-portable.pdf'
 with temp.open('wb') as stream:
@@ -25,7 +36,11 @@ with temp.open('wb') as stream:
 temp.replace(pdf)
 
 reader = PdfReader(pdf)
-assert len(reader.pages) == 5
+assert len(reader.pages) == 3
+checks = json.loads((HERE.parent / 'qa/part-one/website-export-checks.json').read_text())
+normalize = lambda t: re.sub(r'[\W_]+', '', unicodedata.normalize('NFKC', t)).lower()
+for page, check in zip(reader.pages, checks):
+    assert normalize(check['mainText']) in normalize(page.extract_text()), f"Website text differs in study {check['study']}"
 text = ' '.join(page.extract_text() for page in reader.pages).lower()
 for expected in ['james xie', '100 cm', '200 mm', '257 mm', 'dolly zoom', '35 mm']:
     assert expected in text, expected
@@ -47,6 +62,6 @@ with ZipFile(archive) as z:
         assert hashlib.sha256(z.read(p.relative_to(OUT).as_posix())).hexdigest() == digest(p)
     entries = len(z.namelist())
 qa = HERE.parent / 'qa/part-one'
-result = {'pdf_pages': 5, 'gif_frames': 7, 'gif_matches_original': True, 'zip_entries': entries, 'zip_crc_and_sha256': 'passed', 'pdf_bytes': pdf.stat().st_size, 'zip_bytes': archive.stat().st_size, 'public_webpage': 'not verified', 'published_or_uploaded': False}
+result = {'pdf_pages': 3, 'website_text_matches': True, 'gif_frames': 7, 'gif_matches_original': True, 'zip_entries': entries, 'zip_crc_and_sha256': 'passed', 'pdf_bytes': pdf.stat().st_size, 'zip_bytes': archive.stat().st_size, 'public_webpage': 'https://aaajamesxie.github.io/Perspective-Through-the-Lens/index.html', 'learn_uploaded': False}
 (qa / 'package-checks.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
 print(json.dumps(result, indent=2))
