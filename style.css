@@ -73,7 +73,6 @@ h1 em { color: inherit; font-style: normal; }
 .project-hero-topline, .project-hero-rule { display: flex; justify-content: space-between; gap: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
 .project-hero > .eyebrow { margin-top: 48px; }
 .project-hero h1 { padding: 38px 4%; background: var(--dark); color: var(--light); margin: 20px 0 26px; font-size: clamp(62px, 8vw, 125px); line-height: .99; }
-.portrait-page .project-hero h1 { font-size: clamp(44px, 6.5vw, 100px); }
 .project-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; margin-bottom: 30px; align-items: start; }
 .project-deck { max-width: 800px; font-size: 19px; line-height: 1.55; margin: 0; }
 .project-intro-note { font-size: 17px; font-weight: 800; text-align: right; }
@@ -157,7 +156,6 @@ h1 em { color: inherit; font-style: normal; }
   .project-hero-topline span:last-child { display: none; }
   .project-hero > .eyebrow { margin-top: 30px; }
   .project-hero h1 { font-size: clamp(44px, 11vw, 68px); padding: 26px 20px; }
-  .portrait-page .project-hero h1 { font-size: clamp(34px, 8.2vw, 50px); }
   .project-deck { font-size: 16px; }
   .project-hero-rule { font-size: 10px; }
   .comparison-grid { grid-template-columns: 1fr; max-width: 440px; }
@@ -180,7 +178,6 @@ h1 em { color: inherit; font-style: normal; }
   .site-header, .site-footer, .closing-section { display: none !important; }
   .shell { width: 100%; }
   .project-hero h1 { font-size: 36pt; padding: 8mm; }
-  .portrait-page .project-hero h1 { font-size: 30pt; }
   .project-hero > .eyebrow { margin-top: 5mm; }
   .project-hero, .comparison-section, .sequence-section, .explanation-section, .dolly-stage, .dolly-notes { padding-block: 7mm; }
   .project-deck { font-size: 11pt; }
