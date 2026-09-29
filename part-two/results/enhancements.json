@@ -1,0 +1,1631 @@
+{
+  "count": 20,
+  "order": [
+    "crop",
+    "white_balance",
+    "contrast"
+  ],
+  "input": "Original scans with SHA-256 verification; saved baseline shifts; no JPEG intermediate.",
+  "records": [
+    {
+      "id": "00056v",
+      "group": "provided",
+      "sha256": "bd9ee4a469bb71ea0fcbe4a06982781008ae82fbe2247276531158920df1b417",
+      "input_shape_hw": [
+        328,
+        397
+      ],
+      "crop": {
+        "box_xyxy": [
+          23,
+          1,
+          381,
+          317
+        ],
+        "margins_ltrb": [
+          23,
+          1,
+          16,
+          11
+        ],
+        "retained_fraction": 0.8687718867113104,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0235294122248888,
+          0.9882352948188782
+        ],
+        "clipped_sample_fraction": 0.0177243963875407
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.525109755593763,
+          0.5430430953226275,
+          0.5390407836996284
+        ],
+        "gains_rgb": [
+          1.0202271160110135,
+          0.9865353526323533,
+          0.9938602564758818
+        ],
+        "global_highlight_scale": 1.0202271160110135
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.5377527737647172,
+          0.552504794193537,
+          0.5507774406464907
+        ],
+        "gains_rgb": [
+          1.0172177554852535,
+          0.9900577791969387,
+          0.9931628079988978
+        ],
+        "global_highlight_scale": 1.0172177554852535
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.14166679978370667,
+          0.9495503902435303
+        ],
+        "clipped_sample_fraction": 0.017611319331494707
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/00056v-baseline.jpg",
+        "crop": "results/enhancements/provided/00056v-crop.jpg",
+        "contrast": "results/enhancements/provided/00056v-contrast.jpg",
+        "balance": "results/enhancements/provided/00056v-balance.jpg",
+        "combined": "results/enhancements/provided/00056v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/00056v.jpg"
+    },
+    {
+      "id": "00125v",
+      "group": "provided",
+      "sha256": "077a1f8591711522c5f5e69f17a327158eee110dd6eb39d827bd6770400ce3d2",
+      "input_shape_hw": [
+        331,
+        398
+      ],
+      "crop": {
+        "box_xyxy": [
+          15,
+          16,
+          381,
+          331
+        ],
+        "margins_ltrb": [
+          15,
+          16,
+          17,
+          0
+        ],
+        "retained_fraction": 0.8751461233660751,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.03921568766236305,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.009984464113113403
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.39940551478438013,
+          0.5520272808464318,
+          0.4764618738538512
+        ],
+        "gains_rgb": [
+          1.191683319858945,
+          0.8622126230761943,
+          0.9989569280294972
+        ],
+        "global_highlight_scale": 1.191683319858945
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.37299972720717967,
+          0.5320631963962065,
+          0.4639090934642301
+        ],
+        "gains_rgb": [
+          1.2233896499225694,
+          0.8576500099612208,
+          0.9836496247176721
+        ],
+        "global_highlight_scale": 1.2233896499225694
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0630616694688797,
+          0.7125968337059021
+        ],
+        "clipped_sample_fraction": 0.019001358892069276
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/00125v-baseline.jpg",
+        "crop": "results/enhancements/provided/00125v-crop.jpg",
+        "contrast": "results/enhancements/provided/00125v-contrast.jpg",
+        "balance": "results/enhancements/provided/00125v-balance.jpg",
+        "combined": "results/enhancements/provided/00125v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/00125v.jpg"
+    },
+    {
+      "id": "00163v",
+      "group": "provided",
+      "sha256": "c91cc1b38f867b7694ecf1c1915047b2c3588e837c87e13aec35a781b553f774",
+      "input_shape_hw": [
+        337,
+        386
+      ],
+      "crop": {
+        "box_xyxy": [
+          9,
+          10,
+          373,
+          329
+        ],
+        "margins_ltrb": [
+          9,
+          10,
+          13,
+          8
+        ],
+        "retained_fraction": 0.8926369520763826,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.007843137718737125,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.00936844964458316
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.49748530397349583,
+          0.4990223136184,
+          0.4751927275672944
+        ],
+        "gains_rgb": [
+          0.9860930117965166,
+          0.9830558039832749,
+          1.032353302692871
+        ],
+        "global_highlight_scale": 1.032353302692871
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.48747720260844507,
+          0.48867755750448816,
+          0.47377474395149716
+        ],
+        "gains_rgb": [
+          0.9914511532067501,
+          0.9890158188484124,
+          1.0201257894355433
+        ],
+        "global_highlight_scale": 1.0201257894355433
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.07241541892290115,
+          0.9686274528503418
+        ],
+        "clipped_sample_fraction": 0.01802794906243182
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/00163v-baseline.jpg",
+        "crop": "results/enhancements/provided/00163v-crop.jpg",
+        "contrast": "results/enhancements/provided/00163v-contrast.jpg",
+        "balance": "results/enhancements/provided/00163v-balance.jpg",
+        "combined": "results/enhancements/provided/00163v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/00163v.jpg"
+    },
+    {
+      "id": "00458u",
+      "group": "provided",
+      "sha256": "d40e9050afd1e68a3c84c598b423d5fc73a806b9827a6849350cbece8ba98b33",
+      "input_shape_hw": [
+        3151,
+        3709
+      ],
+      "crop": {
+        "box_xyxy": [
+          148,
+          126,
+          3548,
+          3125
+        ],
+        "margins_ltrb": [
+          148,
+          126,
+          161,
+          26
+        ],
+        "retained_fraction": 0.8724692841886056,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.003921568859368563,
+          0.9647058844566345
+        ],
+        "clipped_sample_fraction": 0.008965072678535578
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6575422579248625,
+          0.6574762769483339,
+          0.6377779231815931
+        ],
+        "gains_rgb": [
+          0.9899472540961951,
+          0.9900466001696996,
+          1.020625093822182
+        ],
+        "global_highlight_scale": 1.0126201916026667
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.6674194166294888,
+          0.6637236575048576,
+          0.669554006157875
+        ],
+        "gains_rgb": [
+          0.9992202955855811,
+          1.0047841736893235,
+          0.9960347046401287
+        ],
+        "global_highlight_scale": 1.0
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0820263922214508,
+          0.9614405632019043
+        ],
+        "clipped_sample_fraction": 0.013897246794683195
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/00458u-baseline.jpg",
+        "crop": "results/enhancements/provided/00458u-crop.jpg",
+        "contrast": "results/enhancements/provided/00458u-contrast.jpg",
+        "balance": "results/enhancements/provided/00458u-balance.jpg",
+        "combined": "results/enhancements/provided/00458u-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/00458u.jpg"
+    },
+    {
+      "id": "00804v",
+      "group": "provided",
+      "sha256": "8859f911b7ac802ae10ceb32109a3de9eff0ccae7ba53a3dd6eaf1b5822b3626",
+      "input_shape_hw": [
+        328,
+        392
+      ],
+      "crop": {
+        "box_xyxy": [
+          21,
+          8,
+          376,
+          323
+        ],
+        "margins_ltrb": [
+          21,
+          8,
+          16,
+          5
+        ],
+        "retained_fraction": 0.8697190766550522,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0,
+          0.9960784316062927
+        ],
+        "clipped_sample_fraction": 0.008627841380454622
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.5905493112342997,
+          0.6391763207755312,
+          0.5646942069482103
+        ],
+        "gains_rgb": [
+          1.0128535161088958,
+          0.9357980370637111,
+          1.0592280546880202
+        ],
+        "global_highlight_scale": 1.0592280546880202
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.618777041785484,
+          0.6556044699160872,
+          0.5877197542537079
+        ],
+        "gains_rgb": [
+          1.0031083574045654,
+          0.946760509525718,
+          1.0561163164802316
+        ],
+        "global_highlight_scale": 1.0561163164802316
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.10588235408067703,
+          0.9450980424880981
+        ],
+        "clipped_sample_fraction": 0.018737610850286905
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/00804v-baseline.jpg",
+        "crop": "results/enhancements/provided/00804v-crop.jpg",
+        "contrast": "results/enhancements/provided/00804v-contrast.jpg",
+        "balance": "results/enhancements/provided/00804v-balance.jpg",
+        "combined": "results/enhancements/provided/00804v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/00804v.jpg"
+    },
+    {
+      "id": "01007a",
+      "group": "provided",
+      "sha256": "3f55de06407f8e0d6af3e02909a8def7a19282ee4a503d603b40586e1b2babd5",
+      "input_shape_hw": [
+        3109,
+        3786
+      ],
+      "crop": {
+        "box_xyxy": [
+          206,
+          108,
+          3581,
+          3094
+        ],
+        "margins_ltrb": [
+          206,
+          108,
+          205,
+          15
+        ],
+        "retained_fraction": 0.85617442127783,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.05882352963089943,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.009898753461356588
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6699717469151132,
+          0.6006904240697326,
+          0.5447441557483942
+        ],
+        "gains_rgb": [
+          0.9032253151431552,
+          1.0073998485685276,
+          1.1108617428176917
+        ],
+        "global_highlight_scale": 1.1108617428176917
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.7001765627367873,
+          0.6107856742182506,
+          0.5572990883363925
+        ],
+        "gains_rgb": [
+          0.8894239085395537,
+          1.0195945998475011,
+          1.1174498364175354
+        ],
+        "global_highlight_scale": 1.1174498364175354
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.12156862765550613,
+          0.8745098114013672
+        ],
+        "clipped_sample_fraction": 0.01931026270744958
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01007a-baseline.jpg",
+        "crop": "results/enhancements/provided/01007a-crop.jpg",
+        "contrast": "results/enhancements/provided/01007a-contrast.jpg",
+        "balance": "results/enhancements/provided/01007a-balance.jpg",
+        "combined": "results/enhancements/provided/01007a-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01007a.jpg"
+    },
+    {
+      "id": "01047u",
+      "group": "provided",
+      "sha256": "e6af2e5678c8f58247e19ed18a23071d6da35ac90d5baa51398a92115e95bafd",
+      "input_shape_hw": [
+        3147,
+        3708
+      ],
+      "crop": {
+        "box_xyxy": [
+          33,
+          87,
+          3547,
+          2880
+        ],
+        "margins_ltrb": [
+          33,
+          87,
+          161,
+          267
+        ],
+        "retained_fraction": 0.8410779053971369,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0117647061124444,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.009997792455889396
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.4756225966630552,
+          0.36035861927561963,
+          0.39264484893230306
+        ],
+        "gains_rgb": [
+          0.86106510602521,
+          1.1364846009425458,
+          1.0430342400703938
+        ],
+        "global_highlight_scale": 1.1364846009425458
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.4793518761158431,
+          0.36060760078177945,
+          0.4036733715501017
+        ],
+        "gains_rgb": [
+          0.8648016279292224,
+          1.149571672691304,
+          1.0269299687122344
+        ],
+        "global_highlight_scale": 1.149571672691304
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.08235294371843338,
+          0.7137255072593689
+        ],
+        "clipped_sample_fraction": 0.018605882676988157
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01047u-baseline.jpg",
+        "crop": "results/enhancements/provided/01047u-crop.jpg",
+        "contrast": "results/enhancements/provided/01047u-contrast.jpg",
+        "balance": "results/enhancements/provided/01047u-balance.jpg",
+        "combined": "results/enhancements/provided/01047u-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01047u.jpg"
+    },
+    {
+      "id": "01164v",
+      "group": "provided",
+      "sha256": "008722aabe0fb3f322e13cae7703ca0f6f7e5a9ffb66d55195a97917f6f0fa1f",
+      "input_shape_hw": [
+        330,
+        393
+      ],
+      "crop": {
+        "box_xyxy": [
+          19,
+          14,
+          375,
+          325
+        ],
+        "margins_ltrb": [
+          19,
+          14,
+          18,
+          5
+        ],
+        "retained_fraction": 0.853697278124759,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.019607843831181526,
+          0.9803921580314636
+        ],
+        "clipped_sample_fraction": 0.015588454519752229
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.5133758036191137,
+          0.6231001975027122,
+          0.5771255247980558
+        ],
+        "gains_rgb": [
+          1.1126362103807845,
+          0.9167073143761509,
+          0.9897335745803852
+        ],
+        "global_highlight_scale": 1.1126362103807845
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.534408562862772,
+          0.6352898473652401,
+          0.6058577839317605
+        ],
+        "gains_rgb": [
+          1.1074898604719827,
+          0.9316252529054779,
+          0.9768828269879689
+        ],
+        "global_highlight_scale": 1.0553726936738441
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.14403292536735535,
+          0.8189300298690796
+        ],
+        "clipped_sample_fraction": 0.01918421908305936
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01164v-baseline.jpg",
+        "crop": "results/enhancements/provided/01164v-crop.jpg",
+        "contrast": "results/enhancements/provided/01164v-contrast.jpg",
+        "balance": "results/enhancements/provided/01164v-balance.jpg",
+        "combined": "results/enhancements/provided/01164v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01164v.jpg"
+    },
+    {
+      "id": "01269v",
+      "group": "provided",
+      "sha256": "687baebb3265c468b9e61822b908a6d2060fc6a1b352ddff4026b478fac5b687",
+      "input_shape_hw": [
+        328,
+        392
+      ],
+      "crop": {
+        "box_xyxy": [
+          23,
+          8,
+          375,
+          326
+        ],
+        "margins_ltrb": [
+          23,
+          8,
+          17,
+          2
+        ],
+        "retained_fraction": 0.8705823792931807,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.01568627543747425,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.008773021403683424
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6567868738468463,
+          0.535873387659468,
+          0.3654037313457183
+        ],
+        "gains_rgb": [
+          0.790750675698061,
+          0.9691742046612803,
+          1.4213173531953769
+        ],
+        "global_highlight_scale": 1.4213173531953769
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.6886852502118926,
+          0.5470379235905745,
+          0.35238943527912636
+        ],
+        "gains_rgb": [
+          0.7686688070217697,
+          0.9677041515133917,
+          1.5022325208885783
+        ],
+        "global_highlight_scale": 1.3726281542624295
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.1287553608417511,
+          0.7038626670837402
+        ],
+        "clipped_sample_fraction": 0.01951114922813036
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01269v-baseline.jpg",
+        "crop": "results/enhancements/provided/01269v-crop.jpg",
+        "contrast": "results/enhancements/provided/01269v-contrast.jpg",
+        "balance": "results/enhancements/provided/01269v-balance.jpg",
+        "combined": "results/enhancements/provided/01269v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01269v.jpg"
+    },
+    {
+      "id": "01522v",
+      "group": "provided",
+      "sha256": "6bcde710e101d91002d8b2d9c59beb527144435cf85dac44f69e1983069d9b3d",
+      "input_shape_hw": [
+        328,
+        389
+      ],
+      "crop": {
+        "box_xyxy": [
+          17,
+          8,
+          369,
+          323
+        ],
+        "margins_ltrb": [
+          17,
+          8,
+          20,
+          5
+        ],
+        "retained_fraction": 0.8690200012539971,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0,
+          0.9843137264251709
+        ],
+        "clipped_sample_fraction": 0.005760549250736723
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6384984907235207,
+          0.6171703051836139,
+          0.46778937145219945
+        ],
+        "gains_rgb": [
+          0.8997453621784764,
+          0.930838783009059,
+          1.2280870213083668
+        ],
+        "global_highlight_scale": 1.2280870213083668
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.658693635731999,
+          0.6237605163630447,
+          0.4733795326398309
+        ],
+        "gains_rgb": [
+          0.8885434186125268,
+          0.938305454670648,
+          1.2363819188543823
+        ],
+        "global_highlight_scale": 1.2363819188543823
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.08627451211214066,
+          0.9450980424880981
+        ],
+        "clipped_sample_fraction": 0.015728715728715727
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01522v-baseline.jpg",
+        "crop": "results/enhancements/provided/01522v-crop.jpg",
+        "contrast": "results/enhancements/provided/01522v-contrast.jpg",
+        "balance": "results/enhancements/provided/01522v-balance.jpg",
+        "combined": "results/enhancements/provided/01522v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01522v.jpg"
+    },
+    {
+      "id": "01597v",
+      "group": "provided",
+      "sha256": "df03289c357d807b23b0aa203e34f4f5fd65e92d73b9a07ae9c2784528e31704",
+      "input_shape_hw": [
+        325,
+        394
+      ],
+      "crop": {
+        "box_xyxy": [
+          26,
+          0,
+          377,
+          314
+        ],
+        "margins_ltrb": [
+          26,
+          0,
+          17,
+          11
+        ],
+        "retained_fraction": 0.8607106598984772,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0,
+          0.9686274528503418
+        ],
+        "clipped_sample_fraction": 0.008145255759468957
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6162552715795262,
+          0.6093500344783078,
+          0.5514198124734848
+        ],
+        "gains_rgb": [
+          0.961195357662212,
+          0.9720877536082144,
+          1.0742118668534224
+        ],
+        "global_highlight_scale": 1.0742118668534224
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.6540451358895891,
+          0.6245733100135324,
+          0.5602491787081231
+        ],
+        "gains_rgb": [
+          0.9371767195190781,
+          0.981399405070854,
+          1.0940772394951617
+        ],
+        "global_highlight_scale": 1.0940772394951617
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.07726114988327026,
+          0.9607843160629272
+        ],
+        "clipped_sample_fraction": 0.01672503795646046
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01597v-baseline.jpg",
+        "crop": "results/enhancements/provided/01597v-crop.jpg",
+        "contrast": "results/enhancements/provided/01597v-contrast.jpg",
+        "balance": "results/enhancements/provided/01597v-balance.jpg",
+        "combined": "results/enhancements/provided/01597v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01597v.jpg"
+    },
+    {
+      "id": "01598v",
+      "group": "provided",
+      "sha256": "8a3b7e06eeff6ef0af7b4ab0f2a8b857a18ce4eff3943929263351a1b426d7af",
+      "input_shape_hw": [
+        325,
+        391
+      ],
+      "crop": {
+        "box_xyxy": [
+          23,
+          0,
+          373,
+          324
+        ],
+        "margins_ltrb": [
+          23,
+          0,
+          18,
+          1
+        ],
+        "retained_fraction": 0.8923863859925241,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0235294122248888,
+          0.9843137264251709
+        ],
+        "clipped_sample_fraction": 0.018207095547249
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.4505174067570254,
+          0.3850113315167634,
+          0.3396679975900058
+        ],
+        "gains_rgb": [
+          0.8695163370218055,
+          1.0174564051003145,
+          1.1532798146052299
+        ],
+        "global_highlight_scale": 1.1532798146052299
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.43851998306466333,
+          0.36258406135818644,
+          0.3106193325571581
+        ],
+        "gains_rgb": [
+          0.8450571771063207,
+          1.0220373659151445,
+          1.1930180132144392
+        ],
+        "global_highlight_scale": 1.1930180132144392
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.07450380727648749,
+          0.6416718363761902
+        ],
+        "clipped_sample_fraction": 0.01995296884185773
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01598v-baseline.jpg",
+        "crop": "results/enhancements/provided/01598v-crop.jpg",
+        "contrast": "results/enhancements/provided/01598v-contrast.jpg",
+        "balance": "results/enhancements/provided/01598v-balance.jpg",
+        "combined": "results/enhancements/provided/01598v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01598v.jpg"
+    },
+    {
+      "id": "01657u",
+      "group": "provided",
+      "sha256": "3df854261d978c1e1fac9e46a69c0902f5b6e8551624220b8a942d655be8b4ed",
+      "input_shape_hw": [
+        3095,
+        3749
+      ],
+      "crop": {
+        "box_xyxy": [
+          171,
+          97,
+          3629,
+          3082
+        ],
+        "margins_ltrb": [
+          171,
+          97,
+          120,
+          13
+        ],
+        "retained_fraction": 0.8895968381013613,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.05098039284348488,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.009842265602186073
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.5494441572377244,
+          0.439250770173908,
+          0.5010257500615354
+        ],
+        "gains_rgb": [
+          0.9037743920222877,
+          1.1305012828119105,
+          0.9911138481340213
+        ],
+        "global_highlight_scale": 1.1305012828119105
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.5487039649541162,
+          0.4227652964506453,
+          0.4828475846326616
+        ],
+        "gains_rgb": [
+          0.8834860197392816,
+          1.1466699988916143,
+          1.0039861385685032
+        ],
+        "global_highlight_scale": 1.1017025506349571
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.06790109723806381,
+          0.8693877458572388
+        ],
+        "clipped_sample_fraction": 0.01902782339174828
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01657u-baseline.jpg",
+        "crop": "results/enhancements/provided/01657u-crop.jpg",
+        "contrast": "results/enhancements/provided/01657u-contrast.jpg",
+        "balance": "results/enhancements/provided/01657u-balance.jpg",
+        "combined": "results/enhancements/provided/01657u-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01657u.jpg"
+    },
+    {
+      "id": "01725u",
+      "group": "provided",
+      "sha256": "4066fbb4c7d9b0dbd731b832b5b2776aa4b1e3c930491aa3dad55a026839b96b",
+      "input_shape_hw": [
+        3070,
+        3654
+      ],
+      "crop": {
+        "box_xyxy": [
+          63,
+          0,
+          3535,
+          3070
+        ],
+        "margins_ltrb": [
+          63,
+          0,
+          119,
+          0
+        ],
+        "retained_fraction": 0.9501915708812261,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.003921568859368563,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.0017504354694066028
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.48593168227987155,
+          0.36238485963909844,
+          0.3133802423431668
+        ],
+        "gains_rgb": [
+          0.7968862198980606,
+          1.0685663352667645,
+          1.2356626522634246
+        ],
+        "global_highlight_scale": 1.2356626522634246
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.4872319462027724,
+          0.35219881063085673,
+          0.29544029632480706
+        ],
+        "gains_rgb": [
+          0.776407117802941,
+          1.0740818527331775,
+          1.2804290943335628
+        ],
+        "global_highlight_scale": 1.2151523208661803
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0034663027618080378,
+          0.8007159233093262
+        ],
+        "clipped_sample_fraction": 0.0181713988001421
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01725u-baseline.jpg",
+        "crop": "results/enhancements/provided/01725u-crop.jpg",
+        "contrast": "results/enhancements/provided/01725u-contrast.jpg",
+        "balance": "results/enhancements/provided/01725u-balance.jpg",
+        "combined": "results/enhancements/provided/01725u-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01725u.jpg"
+    },
+    {
+      "id": "01728v",
+      "group": "provided",
+      "sha256": "fb9a685e4fac6e2dadf75ad28fb56fee2ad651814eaa2b90e5c52f3f3ac20812",
+      "input_shape_hw": [
+        323,
+        396
+      ],
+      "crop": {
+        "box_xyxy": [
+          19,
+          10,
+          372,
+          323
+        ],
+        "margins_ltrb": [
+          19,
+          10,
+          24,
+          0
+        ],
+        "retained_fraction": 0.8638161803796479,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.0,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.0
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.589945171132584,
+          0.5324081977258004,
+          0.46776335793746326
+        ],
+        "gains_rgb": [
+          0.8984545257220665,
+          0.9955498641756988,
+          1.1331347356258967
+        ],
+        "global_highlight_scale": 1.1331347356258967
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.595845181453244,
+          0.5230374370173925,
+          0.4612162176360179
+        ],
+        "gains_rgb": [
+          0.883953799460039,
+          1.0070017454946294,
+          1.1419798174816387
+        ],
+        "global_highlight_scale": 1.128544761606176
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.095238097012043,
+          0.8888888955116272
+        ],
+        "clipped_sample_fraction": 0.01848449468574549
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01728v-baseline.jpg",
+        "crop": "results/enhancements/provided/01728v-crop.jpg",
+        "contrast": "results/enhancements/provided/01728v-contrast.jpg",
+        "balance": "results/enhancements/provided/01728v-balance.jpg",
+        "combined": "results/enhancements/provided/01728v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01728v.jpg"
+    },
+    {
+      "id": "01861a",
+      "group": "provided",
+      "sha256": "1f3ad8654e4b14d9e34f028b7cb680500e5166a884a2028fab1c3d5d1d7ecf66",
+      "input_shape_hw": [
+        3080,
+        3678
+      ],
+      "crop": {
+        "box_xyxy": [
+          82,
+          0,
+          3521,
+          3014
+        ],
+        "margins_ltrb": [
+          82,
+          0,
+          157,
+          66
+        ],
+        "retained_fraction": 0.9149829099665967,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.054901961237192154,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.00988102888592285
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6300154235070999,
+          0.5752328811243907,
+          0.49792993468131336
+        ],
+        "gains_rgb": [
+          0.9011304463160286,
+          0.9869499786959627,
+          1.1401726231508706
+        ],
+        "global_highlight_scale": 1.1401726231508706
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.6325933770537613,
+          0.5645387221924253,
+          0.48812972912742164
+        ],
+        "gains_rgb": [
+          0.8880174266248472,
+          0.9950671596265218,
+          1.150829194106639
+        ],
+        "global_highlight_scale": 1.150829194106639
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.09494221955537796,
+          0.9215686321258545
+        ],
+        "clipped_sample_fraction": 0.018813692220704527
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/01861a-baseline.jpg",
+        "crop": "results/enhancements/provided/01861a-crop.jpg",
+        "contrast": "results/enhancements/provided/01861a-contrast.jpg",
+        "balance": "results/enhancements/provided/01861a-balance.jpg",
+        "combined": "results/enhancements/provided/01861a-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/01861a.jpg"
+    },
+    {
+      "id": "10131v",
+      "group": "provided",
+      "sha256": "cbbba6e13f50a5a77e040e72b3cbceada21c28587f356f8899caa116edd0da9f",
+      "input_shape_hw": [
+        329,
+        397
+      ],
+      "crop": {
+        "box_xyxy": [
+          18,
+          14,
+          373,
+          329
+        ],
+        "margins_ltrb": [
+          18,
+          14,
+          24,
+          0
+        ],
+        "retained_fraction": 0.8561552066027118,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.007843137718737125,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.00902156242742555
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.7646477934376391,
+          0.6886831318371686,
+          0.5558575722660627
+        ],
+        "gains_rgb": [
+          0.8758666472695575,
+          0.9724784421446236,
+          1.2048581014197686
+        ],
+        "global_highlight_scale": 1.2048581014197686
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.7995897037693895,
+          0.712673296621796,
+          0.5723319921548057
+        ],
+        "gains_rgb": [
+          0.8690269449939504,
+          0.9750119736618724,
+          1.2140942792647202
+        ],
+        "global_highlight_scale": 1.2140942792647202
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.12156862765550613,
+          0.9333333373069763
+        ],
+        "clipped_sample_fraction": 0.018037111558238318
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/10131v-baseline.jpg",
+        "crop": "results/enhancements/provided/10131v-crop.jpg",
+        "contrast": "results/enhancements/provided/10131v-contrast.jpg",
+        "balance": "results/enhancements/provided/10131v-balance.jpg",
+        "combined": "results/enhancements/provided/10131v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/10131v.jpg"
+    },
+    {
+      "id": "31421v",
+      "group": "provided",
+      "sha256": "63c3e1bd5419fe716838f5164b9b5f698d6fb1561586d994840acba49998ca60",
+      "input_shape_hw": [
+        328,
+        398
+      ],
+      "crop": {
+        "box_xyxy": [
+          11,
+          0,
+          378,
+          323
+        ],
+        "margins_ltrb": [
+          11,
+          0,
+          20,
+          5
+        ],
+        "retained_fraction": 0.9080539894594926,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.03529411926865578,
+          1.0
+        ],
+        "clipped_sample_fraction": 0.009925133799076684
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.47542421211515756,
+          0.48096461669761886,
+          0.5804481927697532
+        ],
+        "gains_rgb": [
+          1.0775198110231965,
+          1.065107472378254,
+          0.8825576745268335
+        ],
+        "global_highlight_scale": 1.0775198110231965
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.4643368851798859,
+          0.4720174569772093,
+          0.5798803576857897
+        ],
+        "gains_rgb": [
+          1.0884587952096387,
+          1.0707476156728204,
+          0.8715790419791285
+        ],
+        "global_highlight_scale": 1.0
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.038416195660829544,
+          0.7936129570007324
+        ],
+        "clipped_sample_fraction": 0.019742817534298962
+      },
+      "images": {
+        "baseline": "results/enhancements/provided/31421v-baseline.jpg",
+        "crop": "results/enhancements/provided/31421v-crop.jpg",
+        "contrast": "results/enhancements/provided/31421v-contrast.jpg",
+        "balance": "results/enhancements/provided/31421v-balance.jpg",
+        "combined": "results/enhancements/provided/31421v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/provided/31421v.jpg"
+    },
+    {
+      "id": "00166v",
+      "group": "additional",
+      "sha256": "bb2bb228d6fd4b296658a5a50acfc6f29eab32c6caf440861a9086737145359b",
+      "input_shape_hw": [
+        329,
+        395
+      ],
+      "crop": {
+        "box_xyxy": [
+          28,
+          27,
+          361,
+          307
+        ],
+        "margins_ltrb": [
+          28,
+          27,
+          34,
+          22
+        ],
+        "retained_fraction": 0.7174791273902504,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.07058823853731155,
+          0.9843137264251709
+        ],
+        "clipped_sample_fraction": 0.01619278468187706
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.6377116195988027,
+          0.6468012208964145,
+          0.5609969153594766
+        ],
+        "gains_rgb": [
+          0.9646522028330722,
+          0.9510957907062315,
+          1.0965655991602763
+        ],
+        "global_highlight_scale": 1.0965655991602763
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.5421874559701322,
+          0.5668675127530096,
+          0.43667479558363004
+        ],
+        "gains_rgb": [
+          0.9503046392820041,
+          0.9089306463632554,
+          1.179924419682351
+        ],
+        "global_highlight_scale": 1.068872716213798
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.06624457240104675,
+          0.8268398642539978
+        ],
+        "clipped_sample_fraction": 0.019805519805519804
+      },
+      "images": {
+        "baseline": "results/enhancements/additional/00166v-baseline.jpg",
+        "crop": "results/enhancements/additional/00166v-crop.jpg",
+        "contrast": "results/enhancements/additional/00166v-contrast.jpg",
+        "balance": "results/enhancements/additional/00166v-balance.jpg",
+        "combined": "results/enhancements/additional/00166v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/additional/00166v.jpg"
+    },
+    {
+      "id": "00637v",
+      "group": "additional",
+      "sha256": "2b4f69eda9dc83eb3e54f9086247d095003e0ffb0d34d7aa5ff3da4021ed96a8",
+      "input_shape_hw": [
+        331,
+        389
+      ],
+      "crop": {
+        "box_xyxy": [
+          20,
+          5,
+          376,
+          319
+        ],
+        "margins_ltrb": [
+          20,
+          5,
+          13,
+          12
+        ],
+        "retained_fraction": 0.8681645554873834,
+        "max_search_fraction": 0.15
+      },
+      "contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.003921568859368563,
+          0.9803921580314636
+        ],
+        "clipped_sample_fraction": 0.016985220450609278
+      },
+      "white_balance": {
+        "illuminant_rgb": [
+          0.5529658270430171,
+          0.46078461154428113,
+          0.4349915995683094
+        ],
+        "gains_rgb": [
+          0.873316196230275,
+          1.0480254778910474,
+          1.1101685945148945
+        ],
+        "global_highlight_scale": 1.1101685945148945
+      },
+      "combined_white_balance": {
+        "illuminant_rgb": [
+          0.57435510626854,
+          0.45441549259074165,
+          0.4199252704184611
+        ],
+        "gains_rgb": [
+          0.8407666578083862,
+          1.0626808085689365,
+          1.1499632365810375
+        ],
+        "global_highlight_scale": 1.1499632365810375
+      },
+      "combined_contrast": {
+        "percentiles": [
+          1,
+          99
+        ],
+        "endpoints": [
+          0.043487049639225006,
+          0.9686274528503418
+        ],
+        "clipped_sample_fraction": 0.012726925737732294
+      },
+      "images": {
+        "baseline": "results/enhancements/additional/00637v-baseline.jpg",
+        "crop": "results/enhancements/additional/00637v-crop.jpg",
+        "contrast": "results/enhancements/additional/00637v-contrast.jpg",
+        "balance": "results/enhancements/additional/00637v-balance.jpg",
+        "combined": "results/enhancements/additional/00637v-combined.jpg"
+      },
+      "full_combined": "results/enhancements/full/additional/00637v.jpg"
+    }
+  ]
+}

@@ -15,6 +15,7 @@ python -m unittest test_colorize -v
 python colorize.py "../../syde671 assignment 1 data/data/00458u.jpg" locomotive.jpg
 python run_experiments.py --data "../../syde671 assignment 1 data/data"
 python run_experiments.py --data data/additional --group additional
+python run_enhancements.py --data "../../syde671 assignment 1 data/data"
 python build_report.py
 ```
 
@@ -33,7 +34,25 @@ Serve the repository root with `python -m http.server 8000 --bind 127.0.0.1`, th
 - Compare the same reference interior for every candidate at a level. Exclude 12% of each dimension on each side, or more if the shift window requires it. Wrapped pixels never affect scoring.
 - Build a pyramid explicitly with antialiased bilinear resizing. Coarsest shorter dimension ≤160; initial radius 15; refinement radius 2. Scale shifts using actual adjacent-level size ratios.
 - Run every supplied input at its original resolution. Crop only to the common valid support after shifting. This is not detected-border cropping; physical plate borders remain.
-- No per-image tuning, color balancing, contrast enhancement or edge-feature alignment is used.
+- The baseline uses no per-image tuning or edge-feature alignment. Optional color enhancements are described below and shown separately from the baseline galleries.
+
+## Bells & Whistles
+
+Three automatic post-processing methods are implemented in `enhance.py`, using only the existing NumPy and Pillow dependencies:
+
+- **Automatic cropping:** detect coherent signed RGB transitions near the four edges, supported by uniform, extreme-brightness or strongly colored outer strips. The outer 15% is a search bound, not a fixed crop margin. The detected crop may retain a side unchanged. See the webpage for all thresholds and failure modes.
+- **Automatic contrasting:** stretch the pooled RGB 1st and 99th percentiles to zero and one using the same affine mapping for all channels. This resists isolated extreme pixels but clips some highlights and shadows. Constant images are left unchanged.
+- **Automatic white balance:** estimate a gray-world illuminant from the RGB means, apply diagonal gains limited to [0.5, 2], and uniformly rescale if highlights exceed one. Zero channels keep unit gain. Dominant scene colors can violate the assumption; the report shows a river landscape where this correction is less convincing.
+
+`run_enhancements.py` verifies each original scan's saved SHA-256 hash and recomposes it with the saved pyramid shifts. It processes all 18 provided and two additional scans, without rerunning alignment or reading compressed baseline outputs. Single-method comparisons apply each method independently to the aligned RGB image; the combined pipeline is crop, white balance, contrast. All scans use the same parameters.
+
+Run the enhancement tests with `python -m unittest test_enhance -v`. Six real-array tests cover detected borders of varying colors and widths, unbordered and constant images, shared contrast mapping, known color casts, zero channels and invalid inputs. Existing alignment tests remain in `test_colorize.py`.
+
+Generated artifacts:
+
+- `results/enhancements.json`: crop coordinates, retained area, percentile endpoints, clipping fractions, illuminant estimates, gains and source hashes.
+- `results/enhancements/`: five previews per scan (baseline, crop, contrast, balance, combined), a contact sheet and full-resolution combined results.
+- `index.html#bells-whistles`: English explanations, formulas, single-method comparisons, a failure example and combined results.
 
 ## Saved artifacts
 
@@ -44,7 +63,7 @@ Serve the repository root with `python -m http.server 8000 --bind 127.0.0.1`, th
 - `results/provided-contact.jpg`: complete provided-image visual overview.
 - `data/sources.json`: official source records and download URLs for additional scans.
 - `index.html`: report page.
-- `submission/part-two-report.pdf`: webpage PDF.
+- `submission/part-two-v2.pdf`: webpage PDF.
 - `submission/part-two-code.zip`: code, tests, provenance and additional sample data.
 
 ## Interpretation and limitations

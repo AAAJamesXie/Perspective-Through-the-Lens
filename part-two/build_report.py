@@ -3,6 +3,7 @@ from html import escape
 import json
 from pathlib import Path
 import statistics
+from enhancement_report import render_enhancements
 
 HERE = Path(__file__).resolve().parent
 
@@ -94,7 +95,7 @@ def main():
 <div class="stats"><div><strong>18 + 2</strong><span>Provided + additional plates</span></div><div><strong>6</strong><span>High-resolution input scans</span></div><div><strong>{max(timings):.2f} s</strong><span>Slowest provided alignment</span></div></div></div>
 {image('results/media/provided/00458u-pyramid.jpg', 'Reconstructed locomotive photograph', 'Handwritten NCC pyramid · original scan processed at 3741 × 9715')}
 </section>
-<nav class="report-index shell" aria-label="Report sections"><a href="#method">01 / Method</a><a href="#single">02 / Experiments</a><a href="#pyramid">03 / Pyramid</a><a href="#gallery">04 / Results</a><a href="#additional">05 / More examples</a><a href="#discussion">06 / Discussion</a></nav>
+<nav class="report-index shell" aria-label="Report sections"><a href="#method">01 / Method</a><a href="#single">02 / Experiments</a><a href="#pyramid">03 / Pyramid</a><a href="#gallery">04 / Results</a><a href="#additional">05 / More examples</a><a href="#bells-whistles">06 / Bells &amp; Whistles</a><a href="#discussion">07 / Discussion</a></nav>
 <section class="shell report-section" id="method"><p class="eyebrow">01 / Method</p><h2>Recover the alignment,<br>then recover the color.</h2>
 <p>The inputs are grayscale scans containing three vertically stacked exposures in blue, green and red order. The program divides each scan into three equal-height arrays, discards at most two trailing rows, keeps blue fixed and translates green and red. The final channel order is red, green, blue.</p>
 <div class="workflow"><span>Stacked B / G / R</span><b>→</b><span>Split & normalize</span><b>→</b><span>Estimate G / R shifts</span><b>→</b><span>Compose RGB</span></div>
@@ -121,20 +122,22 @@ def main():
 <p>Each pair shows the unaligned composite and the NCC pyramid result. Click an aligned image to open the saved result at original pixel scale, after the common-support crop. Web previews are at most 900 pixels wide.</p>{''.join(gallery)}</section>
 <section class="shell report-section" id="additional"><p class="eyebrow">05 / Additional collection examples</p><h2>Beyond the supplied dataset.</h2>
 <p>Two additional three-frame grayscale JPEGs were downloaded from the Library of Congress, rather than using its finished color restorations. Both use exactly the same pipeline and parameters as the provided set. These examples are low-resolution scans; the large-image demonstration comes from the six supplied high-resolution scans.</p>{''.join(additional)}</section>
-<section class="shell report-section" id="discussion"><p class="eyebrow">06 / Discussion & limitations</p><h2>Alignment is only part<br>of restoration.</h2>
+{render_enhancements(HERE, image)}
+<section class="shell report-section" id="discussion"><p class="eyebrow">07 / Discussion & limitations</p><h2>Alignment is only part<br>of restoration.</h2>
 <p><strong>Visual assessment:</strong> the reconstructed previews show broadly aligned scene structure. This is a qualitative inspection, not a ground-truth accuracy score. The saved high-resolution outputs remain available for closer inspection.</p>
 <p><strong>Damaged exposures:</strong> the first detailed experiment has visible scratches and blotches in its individual grayscale channels. Their disagreement produces colored speckles after composition. Searching for a different global displacement cannot reconstruct these missing details.</p>
 <p><strong>Local residuals:</strong> faces, foliage and object boundaries can retain colored fringes. Motion between sequential exposures, channel-dependent brightness and departures from pure translation are plausible causes; the current experiment does not isolate their individual contributions. The model cannot correct local motion, rotation or scale change.</p>
 <p><strong>Border artifacts:</strong> excluding borders from the score prevents them dominating the alignment, but does not restore or remove the physical borders in the final image. The common-support crop only removes wrapped pixels.</p>
-<p><strong>Optional extensions:</strong> edge-based alignment, detected-border cropping, white balance and contrast enhancement are not implemented in this baseline submission. Keeping the original intensities makes the L2/NCC results and remaining defects transparent.</p>
+<p><strong>Enhancement scope:</strong> the Bells &amp; Whistles section implements detected-border cropping, contrast enhancement and gray-world white balance. The earlier L2/NCC galleries retain their original intensities for comparison. These post-processing methods cannot repair missing emulsion or local misalignment, and a more vivid result is not evidence of historically accurate color.</p>
 <p><strong>Dataset discrepancy:</strong> the handout mentions both 5 and 20 examples and legacy image names; the supplied directory contains 18 numbered JPEGs. All 18 were processed, and three selected plates receive detailed experiments.</p>
 </section>
-<section class="shell report-section" id="reproduce"><p class="eyebrow">07 / Reproducibility</p><h2>Measurements & reproducibility.</h2>
+<section class="shell report-section" id="reproduce"><p class="eyebrow">08 / Reproducibility</p><h2>Measurements & reproducibility.</h2>
 <p>Seven synthetic-image unit tests cover channel order, 16-bit normalization, L2/NCC shift recovery, large displacements on odd dimensions, RGB composition, valid-support cropping, blank-image tie handling and invalid inputs. No mock tests are used.</p>
+<p>Six additional unit tests exercise variable-width black, white and colored borders, images without borders, shared contrast endpoints, recovery of a known gray-world cast, finite outputs for constant and zero-channel images, and invalid inputs. The enhancement batch also checks source hashes and finite output ranges for every scan.</p>
 <p>Run instructions are in the project README. Saved records include input SHA-256 hashes, channel dimensions, discarded rows, offsets, per-level scores and timings. NCC/L2 scores at different pyramid levels use different pixels and should not be interpreted as one comparable accuracy curve.</p>
 <p>Environment: Python {report['versions']['python']}, NumPy {report['versions']['numpy']}, Pillow {report['versions']['pillow']}. Measurements were collected with one sequential batch, not a statistical performance benchmark.</p>
 </section>
-<section class="shell report-section" id="references"><p class="eyebrow">08 / References</p><h2>Design & image sources.</h2>
+<section class="shell report-section" id="references"><p class="eyebrow">09 / References</p><h2>Design & image sources.</h2>
 <ol>
 <li><p><strong>Website design reference:</strong> <a href="https://www.wix.com/website-template/view/html/wh-1329">Wix — AI Blog (Abstract)</a>. Visual reference for the independently implemented static website.</p></li>
 <li><p><strong>Additional photograph:</strong> <a href="{escape(sources[0]['item_url'])}">{escape(sources[0]['title'])}</a>. Prokudin-Gorskii photograph collection, Library of Congress, Prints and Photographs Division.</p></li>
